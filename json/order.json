@@ -1,0 +1,41 @@
+{
+  "type":12,
+  "pageNum":3,
+  "dataZone":{
+    "list":[
+      {
+        "id":       202,
+        "shopid":   "101",
+        "shopname": "小刘烤肉拌饭",
+        "shopimg":  "",
+        "date":     "2020-07-26 16:00",
+        "content":  "烤肠+烤肉拌饭+卤蛋",
+        "amont":    "28.5",
+        "stause":   "1",
+        "count":    2
+      },
+      {
+        "id":       203,
+        "shopid":   "101",
+        "shopname": "小刘烤肉拌饭",
+        "shopimg":  "",
+        "date":     "2020-07-26 16:00",
+        "content":  "烤肠+烤肉拌饭+卤蛋",
+        "amont":    "28.5",
+        "stause":   "1",
+        "count":    3
+      },
+      {
+        "id":       204,
+        "shopid":   "101",
+        "shopname": "小刘烤肉拌饭",
+        "shopimg":  "",
+        "date":     "2020-07-26 16:00",
+        "content":  "烤肠+烤肉拌饭+卤蛋",
+        "amont":    "28.5",
+        "stause":   "1",
+        "count":    4
+      }
+    ]
+  }
+}
