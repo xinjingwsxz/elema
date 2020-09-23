@@ -3,7 +3,7 @@
 
 
 	<head>
-
+<meta charset="utf-8">
 		<title>Bootstrap 模板</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -19,14 +19,13 @@
 	<router-link to="orderlist">orderlist</router-link>
 	<router-view></router-view>
 	
-	
+	<mainnav></mainnav>
 </div>
-
 
 		<!-- 订单组件 -->
 		<template id="orderlistcpn">
 			<div id="orderlist">
-				<button @click="getOrder">getOrder</button>
+				<button @click="getOrderList">getOrder</button>
 				<div>
 					<header>
 						我的订单
@@ -37,7 +36,6 @@
 				</div>
 				<ul><!-- 商家列表 -->
 					<li v-for="(shop,index) in noPayList">
-						
 						<div>{{shop.shopname}}</div>
 						<div>
 							<span>￥{{shop.amount}}</sapn>
@@ -77,6 +75,15 @@
 
 
 
+
+<template id="mainnavcpn">
+	<div>
+		<h6><i>首页</i></h6>
+		<h6><i>首页</i></h6>
+		<h6><i>首页</i></h6>
+		<h6><i>首页</i></h6>
+	</div>
+</template>
 		<script src="./js/jquery-3.3.1.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		<script src="./js/vue.js"></script>
@@ -84,7 +91,6 @@
 		<script src="./js/vue-router.js"></script>
 		<script src="./js/elm_orderlist.js"></script>
 		<script src="./js/index.js"></script>
-
 
 	</body>
 </html>
