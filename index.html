@@ -3,7 +3,7 @@
 
 
 	<head>
-<meta charset="utf-8">
+		<meta charset="utf-8">
 		<title>Bootstrap 模板</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -15,12 +15,13 @@
       <![endif]-->
 	</head>
 	<body>
-<div id="index">
-	<router-link to="orderlist">orderlist</router-link>
-	<router-view></router-view>
-	
-	<mainnav></mainnav>
-</div>
+		<div id="index">
+			<router-link to="orderlist">orderlist</router-link>
+			<router-view></router-view>
+
+			<!-- <mainnav></mainnav> -->
+			<gotopcpn></gotopcpn>
+		</div>
 
 		<!-- 订单组件 -->
 		<template id="orderlistcpn">
@@ -31,17 +32,20 @@
 						我的订单
 					</header>
 				</div>
-				<div><!-- 未支付订单信息 -->
+				<div>
+					<!-- 未支付订单信息 -->
 					未支付订单信息:
 				</div>
-				<ul><!-- 商家列表 -->
+				<ul>
+					<!-- 商家列表 -->
 					<li v-for="(shop,index) in noPayList">
 						<div>{{shop.shopname}}</div>
 						<div>
 							<span>￥{{shop.amount}}</sapn>
 						</div>
-						<button >去支付</button>
-						<ul><!-- 订餐内容列表 -->
+						<button>去支付</button>
+						<ul>
+							<!-- 订餐内容列表 -->
 							<li v-for="(product,index) in shop.productlist">
 								<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
 							</li>
@@ -60,8 +64,9 @@
 						<div>
 							<span>￥{{shop.amount}}</sapn>
 						</div>
-						<button >去支付</button>
-						<ul><!-- 订餐内容列表 -->
+						<button>去支付</button>
+						<ul>
+							<!-- 订餐内容列表 -->
 							<li v-for="(product,index) in shop.productlist">
 								<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
 							</li>
@@ -71,19 +76,24 @@
 				</ul>
 			</div>
 		</template>
-
-
-
-
-
-<template id="mainnavcpn">
-	<div>
-		<h6><i>首页</i></h6>
-		<h6><i>首页</i></h6>
-		<h6><i>首页</i></h6>
-		<h6><i>首页</i></h6>
-	</div>
-</template>
+		
+		<!-- //主导航主组件 -->
+		<template id="mainnavcpn">
+			<div>
+				<h6><i>首页</i></h6>
+				<h6><i>首页</i></h6>
+				<h6><i>首页</i></h6>
+				<h6><i>首页</i></h6>
+			</div>
+		</template>
+		
+		<!-- 回顶部 -->
+		<template id="goTopTemp">
+			<div class="goTopTemp" @click="goTop" v-show="topDistance>100">
+				<i class="">go top</i>
+			</div>
+		</template>
+		
 		<script src="./js/jquery-3.3.1.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		<script src="./js/vue.js"></script>
