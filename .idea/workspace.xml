@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="orderlist js get data and show and add some files ok" />
+    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="main nav html and reg ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +71,7 @@
       <workItem from="1600777665589" duration="1252000" />
       <workItem from="1600819124204" duration="175000" />
       <workItem from="1600821577649" duration="221000" />
+      <workItem from="1600826131898" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="order json ok">
       <created>1600769630801</created>
@@ -112,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600821807715</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="main nav html and reg ok">
+      <created>1600826357574</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1600826357574</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,17 +147,18 @@
     <MESSAGE value="order json ok &#10;order html ok&#10;order code ok&#10;orderlist rewrite  html ok" />
     <MESSAGE value="orderlist js get data and show ok" />
     <MESSAGE value="orderlist js get data and show and add some files ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="orderlist js get data and show and add some files ok" />
+    <MESSAGE value="main nav html and reg ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="main nav html and reg ok" />
   </component>
   <component name="WindowStateProjectService">
     <state width="623" height="498" key="SwitcherDM" timestamp="1600771977968">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1440.860@0.0.1440.860" timestamp="1600771977968" />
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600821819066">
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600826396124">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600821819066" />
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600826396124" />
     <state x="-16" y="43" width="1199" height="821" key="dock-window-1" timestamp="1600778942060">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
