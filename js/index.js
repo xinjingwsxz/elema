@@ -30,20 +30,21 @@ let goTopTemp = Vue.extend({
 		window.addEventListener("scroll", this.getTopDistance);
 	},
 	methods: {
+		//实现回到顶部
 		getTopDistance() {
 			this.topDistance = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
 		},
 		goTop() {
-			
 			let id = setInterval(function(){
-				let y = this.topDistance;
-				document.documentElement.scrollTop = y;
-				document.body.scrollTop = y;
-				window.pageYOffset = y;
-				if(y < 0){
+				let y = $(window).scrollTop() ;
+				console.log(y);
+				if(y > 0){
+					y=y-10;
+					$(window).scrollTop(y);
+				}else{
 					clearInterval(id);
 				}
-			},50);
+			},5);
 		}
 	}
 });
