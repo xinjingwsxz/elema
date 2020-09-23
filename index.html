@@ -26,97 +26,48 @@
 		<!-- 订单组件 -->
 		<template id="orderlistcpn">
 			<div id="orderlist">
+				<button @click="getOrder">getOrder</button>
 				<div>
 					<header>
 						我的订单
 					</header>
 				</div>
-				<div>
+				<div><!-- 未支付订单信息 -->
 					未支付订单信息:
 				</div>
-				<ul>
-					<!-- 未支付订单信息 -->
-					<li>
-						<!-- 商家列表 -->
-						<div>万家饺子(软件园E18号店)</div>
+				<ul><!-- 商家列表 -->
+					<li v-for="(shop,index) in noPayList">
+						
+						<div>{{shop.shopname}}</div>
 						<div>
-							<span>￥49</sapn>
+							<span>￥{{shop.amount}}</sapn>
 						</div>
-						<button>去支付</button>
-						<ul>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>纯肉鲜肉(水饺) x 2</span><span>￥15</span>
+						<button >去支付</button>
+						<ul><!-- 订餐内容列表 -->
+							<li v-for="(product,index) in shop.productlist">
+								<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
 							</li>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>玉米鲜肉(水饺) x 1</span><span>￥16</span>
-							</li>
-							<li><span>配送费</span><span>￥3</span></li>
-						</ul>
-					</li>
-					<li>
-						<!-- 商家列表 -->
-						<div>小锅豆腐饭馆(全运店)</div>
-						<div>
-							<span>￥49</sapn>
-						</div>
-						<button>去支付</button>
-						<ul>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>纯肉鲜肉(水饺) x 2</span><span>￥15</span>
-							</li>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>玉米鲜肉(水饺) x 1</span><span>￥16</span>
-							</li>
-							<li><span>配送费</span><span>￥3</span></li>
+							<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>
 						</ul>
 					</li>
 				</ul>
-
 				<div>
 					已支付订单信息:
 				</div>
 				<ul>
 					<!-- 已支付订单信息 -->
-					<li>
+					<li v-for="(shop,index) in alreadyPayList">
 						<!-- 商家列表 -->
-						<div>万家饺子(软件园E18号店)</div>
+						<div>{{shop.shopname}}</div>
 						<div>
-							<span>￥49</sapn>
+							<span>￥{{shop.amount}}</sapn>
 						</div>
-						<button>去支付</button>
-						<ul>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>纯肉鲜肉(水饺) x 2</span><span>￥15</span>
+						<button >去支付</button>
+						<ul><!-- 订餐内容列表 -->
+							<li v-for="(product,index) in shop.productlist">
+								<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
 							</li>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>玉米鲜肉(水饺) x 1</span><span>￥16</span>
-							</li>
-							<li><span>配送费</span><span>￥3</span></li>
-						</ul>
-					</li>
-					<li>
-						<!-- 商家列表 -->
-						<div>小锅豆腐饭馆(全运店)</div>
-						<div>
-							<span>￥49</sapn>
-						</div>
-						<button>去支付</button>
-						<ul>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>纯肉鲜肉(水饺) x 2</span><span>￥15</span>
-							</li>
-							<li>
-								<!-- 订餐内容列表 -->
-								<span>玉米鲜肉(水饺) x 1</span><span>￥16</span>
-							</li>
-							<li><span>配送费</span><span>￥3</span></li>
+							<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>
 						</ul>
 					</li>
 				</ul>
