@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="order json ok &#10;order html ok&#10;order code ok&#10;orderlist rewrite  html ok" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hrPMswPjvnqCh5IgSi3m5FzUwZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/image" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\webworkspace\elema\image" />
+      <recent name="D:\Java\webworkspace\elema" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="" />
+      <created>1600766192538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600766192538</updated>
+      <workItem from="1600766193682" duration="9625000" />
+      <workItem from="1600777665589" duration="1252000" />
+      <workItem from="1600819124204" duration="175000" />
+    </task>
+    <task id="LOCAL-00001" summary="order json ok">
+      <created>1600769630801</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600769630801</updated>
+    </task>
+    <task id="LOCAL-00002" summary="order json ok &#10;order html ok">
+      <created>1600771006545</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600771006577</updated>
+    </task>
+    <task id="LOCAL-00003" summary="order json ok &#10;order html ok&#10;order code ok">
+      <created>1600772142841</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600772142889</updated>
+    </task>
+    <task id="LOCAL-00004" summary="order json ok &#10;order html ok&#10;order code ok&#10;orderlist rewrite  html ok">
+      <created>1600819296940</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600819296940</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="order json ok" />
+    <MESSAGE value="order json ok &#10;order html ok" />
+    <MESSAGE value="order json ok &#10;order html ok&#10;order code ok" />
+    <MESSAGE value="order json ok &#10;order html ok&#10;order code ok&#10;orderlist rewrite  html ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="order json ok &#10;order html ok&#10;order code ok&#10;orderlist rewrite  html ok" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="623" height="498" key="SwitcherDM" timestamp="1600771977968">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="623" height="498" key="SwitcherDM/0.0.1440.860@0.0.1440.860" timestamp="1600771977968" />
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600819312211">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600819312211" />
+    <state x="-16" y="43" width="1199" height="821" key="dock-window-1" timestamp="1600778942060">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="-16" y="43" width="1199" height="821" key="dock-window-1/0.0.1440.860@0.0.1440.860" timestamp="1600778942059" />
+  </component>
+</project>
