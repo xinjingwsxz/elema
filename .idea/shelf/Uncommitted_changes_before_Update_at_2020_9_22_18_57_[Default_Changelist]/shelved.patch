@@ -1,0 +1,10 @@
+Index: css/order.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- css/order.css	(date 1600772111879)
++++ css/order.css	(date 1600772111879)
+@@ -0,0 +1,1 @@
++#order .
+\ No newline at end of file

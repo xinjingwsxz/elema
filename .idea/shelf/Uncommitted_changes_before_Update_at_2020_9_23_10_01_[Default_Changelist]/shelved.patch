@@ -1,0 +1,89 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n\r\n\r\n\t<head>\r\n\r\n\t\t<title>Bootstrap 模板</title>\r\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n\t\t<link href=\"./css/bootstrap.min.css\" rel=\"stylesheet\">\r\n\t\t<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->\r\n\t\t<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->\r\n\t\t<!--[if lt IE 9]>\r\n         <script src=\"https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js\"></script>\r\n         <script src=\"https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js\"></script>\r\n      <![endif]-->\r\n\t</head>\r\n\t<body>\r\n<div id=\"index\">\r\n\t<router-link to=\"orderlist\">orderlist</router-link>\r\n\t<router-view></router-view>\r\n\t\r\n\t\r\n</div>\r\n\r\n\r\n\t\t<!-- 订单组件 -->\r\n\t\t<template id=\"orderlistcpn\">\r\n\t\t\t<div id=\"orderlist\">\r\n\t\t\t\t<button @click=\"getOrder\">getOrder</button>\r\n\t\t\t\t<div>\r\n\t\t\t\t\t<header>\r\n\t\t\t\t\t\t我的订单\r\n\t\t\t\t\t</header>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div><!-- 未支付订单信息 -->\r\n\t\t\t\t\t未支付订单信息:\r\n\t\t\t\t</div>\r\n\t\t\t\t<ul><!-- 商家列表 -->\r\n\t\t\t\t\t<li v-for=\"(shop,index) in noPayList\">\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<div>{{shop.shopname}}</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<span>￥{{shop.amount}}</sapn>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<button >去支付</button>\r\n\t\t\t\t\t\t<ul><!-- 订餐内容列表 -->\r\n\t\t\t\t\t\t\t<li v-for=\"(product,index) in shop.productlist\">\r\n\t\t\t\t\t\t\t\t<span>{{product.name}} x {{product.count}}</span><span>￥15</span>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t<div>\r\n\t\t\t\t\t已支付订单信息:\r\n\t\t\t\t</div>\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<!-- 已支付订单信息 -->\r\n\t\t\t\t\t<li v-for=\"(shop,index) in alreadyPayList\">\r\n\t\t\t\t\t\t<!-- 商家列表 -->\r\n\t\t\t\t\t\t<div>{{shop.shopname}}</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<span>￥{{shop.amount}}</sapn>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<button >去支付</button>\r\n\t\t\t\t\t\t<ul><!-- 订餐内容列表 -->\r\n\t\t\t\t\t\t\t<li v-for=\"(product,index) in shop.productlist\">\r\n\t\t\t\t\t\t\t\t<span>{{product.name}} x {{product.count}}</span><span>￥15</span>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</template>\r\n\r\n\r\n\r\n\r\n\t\t<script src=\"./js/jquery-3.3.1.js\"></script>\r\n\t\t<script src=\"./js/bootstrap.min.js\"></script>\r\n\t\t<script src=\"./js/vue.js\"></script>\r\n\t\t<script src=\"./js/vue-resources.js\"></script>\r\n\t\t<script src=\"./js/vue-router.js\"></script>\r\n\t\t<script src=\"./js/elm_orderlist.js\"></script>\r\n\t\t<script src=\"./js/index.js\"></script>\r\n\r\n\r\n\t</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(revision 4994f17432ecf343c79606071d684dcdcb64022d)
++++ index.html	(date 1600825908225)
+@@ -1,9 +1,7 @@
+ <!DOCTYPE html>
+ <html>
+-
+-
+ 	<head>
+-
++		<meta charset="UTF-8">
+ 		<title>Bootstrap 模板</title>
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 		<link href="./css/bootstrap.min.css" rel="stylesheet">
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6dc822e4-cee1-4fbb-95ce-de1b14f1daf2\" name=\"Default Changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1hrOpBrAl2uNjyv3iriVAcJNuAh\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Users\\Administrator\\WebstormProjects\\elema\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6dc822e4-cee1-4fbb-95ce-de1b14f1daf2\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1600765924760</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1600765924760</updated>\r\n      <workItem from=\"1600765925829\" duration=\"8629000\" />\r\n      <workItem from=\"1600822655020\" duration=\"991000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"487\" y=\"276\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1600825174080\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"728\" />\r\n    </state>\r\n    <state x=\"487\" y=\"276\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728\" timestamp=\"1600825174080\" />\r\n    <state x=\"481\" y=\"262\" key=\"git4idea.remote.GitConfigureRemotesDialog\" timestamp=\"1600825166733\">\r\n      <screen x=\"0\" y=\"0\" width=\"1366\" height=\"728\" />\r\n    </state>\r\n    <state x=\"481\" y=\"262\" key=\"git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728\" timestamp=\"1600825166733\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 4994f17432ecf343c79606071d684dcdcb64022d)
++++ .idea/workspace.xml	(date 1600826486503)
+@@ -1,7 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="6dc822e4-cee1-4fbb-95ce-de1b14f1daf2" name="Default Changelist" comment="" />
++    <list default="true" id="6dc822e4-cee1-4fbb-95ce-de1b14f1daf2" name="Default Changelist" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -52,21 +55,41 @@
+       <option name="presentableId" value="Default" />
+       <updated>1600765924760</updated>
+       <workItem from="1600765925829" duration="8629000" />
+-      <workItem from="1600822655020" duration="991000" />
++      <workItem from="1600822655020" duration="2300000" />
++    </task>
++    <task id="LOCAL-00001" summary="儿童语">
++      <created>1600825328902</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1600825328902</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="儿童语" />
++    <option name="LAST_COMMIT_MESSAGE" value="儿童语" />
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600825174080">
++    <state x="192" y="0" key="CommitChangelistDialog2" timestamp="1600825326452">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1600825174080" />
+-    <state x="481" y="262" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600825166733">
++    <state x="192" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1600825326452" />
++    <state x="318" y="123" key="MultipleFileMergeDialog" timestamp="1600825362994">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="481" y="262" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600825166733" />
++    <state x="318" y="123" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1600825362994" />
++    <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600826486454">
++      <screen x="0" y="0" width="1366" height="728" />
++    </state>
++    <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1600826486454" />
++    <state x="481" y="262" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600825288154">
++      <screen x="0" y="0" width="1366" height="728" />
++    </state>
++    <state x="481" y="262" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600825288154" />
+   </component>
+ </project>
+\ No newline at end of file

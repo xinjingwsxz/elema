@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-<!-- 新增组件订单列表页 -->
+
 
 	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap 模板</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href="css/font-awesome.css" rel="stylesheet" />
+		<link href="css/animate.css" rel="stylesheet" />
+		<link href="css/order.css" rel="stylesheet" />
 		<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
 		<!--[if lt IE 9]>
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-      <![endif]-->
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>-->
+      <!-- [endif]-->
 	</head>
 	<body>
 		<div id="index">
 			<router-link to="orderlist">orderlist</router-link>
 			<router-view></router-view>
-			<mainnav></mainnav> 
+
+			<mainnav></mainnav>
 			<gotopcpn></gotopcpn>
 		</div>
-		
+
 		<!-- 订单组件 -->
 		<template id="orderlistcpn">
+			<div>
 			<div id="orderlist">
 				<button @click="getOrderList">getOrder</button>
 				<div>
@@ -31,45 +37,45 @@
 						我的订单
 					</topcpn>
 				</div>
-				<div>
+				<div class="text-muted mt-2">
 					<!-- 未支付订单信息 -->
 					未支付订单信息:
 				</div>
-				<ul>
+				<ul class="list-unstyled container-fluid">
 					<!-- 商家列表 -->
-					<li v-for="(shop,index) in noPayList">
-						<div>{{shop.shopname}}</div>
-						<div>
-							<span>￥{{shop.amount}}</sapn>
-						</div>
-						<button>去支付</button>
-						<ul>
+					<li v-for="(shop,index) in noPayList " class="row">
+						<div class="nav-link dropdown-toggle  col-6  text-left">{{shop.shopname}}</div>
+						<div class="col-3 " >
+							<span class="font-weight-bold text-secondary text-center">￥{{shop.amount}}</span>
+						</div >
+							<button class="btn btn-warning btn-sm text-white col-2">去支付</button>
+						<ul class="list-unstyled container-fluid">
 							<!-- 订餐内容列表 -->
-							<li v-for="(product,index) in shop.productlist">
-								<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
+							<li v-for="(product,index) in shop.productlist" class="small row">
+								<span class="col-10">{{product.name}} x {{product.count}}</span><span class="col-2">￥15</span>
 							</li>
-							<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>
+							<li class="small row"><span class="col-10">配送费</span><span class="col-2">￥{{shop.deliveryCost}}</span></li>
 						</ul>
 					</li>
 				</ul>
-				<div>
+				<div class="text-muted">
 					已支付订单信息:
 				</div>
-				<ul>
+				<ul class="list-unstyled container-fluid">
 					<!-- 已支付订单信息 -->
-					<li v-for="(shop,index) in alreadyPayList">
+					<li v-for="(shop,index) in alreadyPayList" class="row">
 						<!-- 商家列表 -->
-						<div>{{shop.shopname}}</div>
-						<div>
-							<span>￥{{shop.amount}}</sapn>
+						<div class="dropdown-toggle col-10">{{shop.shopname}}</div>
+						<div class="font-weight-bold text-secondary float-right col-2">
+							<span>￥{{shop.amount}}</span>
 						</div>
-						<button>去支付</button>
-						<ul>
+<!--						<button>去支付</button>-->
+						<ul class="list-unstyled container-fluid">
 							<!-- 订餐内容列表 -->
-							<li v-for="(product,index) in shop.productlist">
-								<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
+							<li v-for="(product,index) in shop.productlist" class="small row">
+								<span class="col-10" >{{product.name}} x {{product.count}}</span><span class="col-2">￥15</span>
 							</li>
-							<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>
+							<li class="small row"><span class="col-10">配送费</span><span class="col-2">￥{{shop.deliveryCost}}</span></li>
 						</ul>
 					</li>
 				</ul>
@@ -78,29 +84,22 @@
 
 		<!-- //主导航主组件 -->
 		<template id="mainnavcpn">
-			<div>
-				<h6><i>首页</i></h6>
-				<h6><i>首页</i></h6>
-				<h6><i>首页</i></h6>
-				<h6><i>首页</i></h6>
+			<div class="container-fluid fixed-bottom mainnavcpn text-muted">
+				<div class="row">
+					<h6 class="col-2 offset-1"><i class="fa fa-home"></i>首页</h6>
+					<h6 class="col-2"><i class="fa fa-compass"></i>发现</h6>
+					<h6 class="col-2"><i class="fa fa-file-text-o"></i>订单</h6>
+					<h6 class="col-2"><i class="fa fa-user-o"></i>我的</h6>
+				</div>
 			</div>
 		</template>
-
+		
 		<!-- 回顶部 -->
 		<template id="goTopTemp">
 			<div class="goTopTemp" @click="goTop" v-show="topDistance>100">
-				<i class="">{{topDistance}}</i>
+				<i class="fa fa-arrow-circle-o-up"></i>
 			</div>
 		</template>
-		
-		
-		<tmeplate id="toptemp">
-			<div class="toptemp">
-				<slot name="location"></slot>
-				<slot name="content"></slot>
-			</div>
-		</tmeplate>
-		
 		
 		<script src="./js/jquery-3.3.1.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
@@ -109,8 +108,6 @@
 		<script src="./js/vue-router.js"></script>
 		<script src="./js/elm_orderlist.js"></script>
 		<script src="./js/index.js"></script>
+
 	</body>
 </html>
-
-
-
