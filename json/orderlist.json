@@ -9,17 +9,25 @@
 				"stause": "1",
 				"amount":"79",
 				"deliveryCost":6,
+				"address":"高新园区东软软件园1",
+				"user":"心静1",
+				"tel":"123456789101",
 				"productlist": [{
 						"id": 101101,
+						"img":"image/dcfl01.png",
 						"name": "纯肉鲜肉(水饺)",
 						"count": 2,
-						"price": 15
+						"price": 15,
+						"specialty":1
 					},
 					{
 						"id": 101102,
+						"img":"image/dcfl02.png",
 						"name": "玉米鲜肉(水饺)",
 						"count": 1,
-						"price": 15
+						"price": 15,
+						"specialty":0
+						
 					}
 				]
 			},
@@ -29,18 +37,25 @@
 				"shopname": "小锅豆腐饭馆(全运店)",
 				"stause": "1",
 				"amount":"89",
+				"address":"高新园区东软软件园2",
 				"deliveryCost":5,
+				"user":"心静2",
+				"tel":"223456789101",
 				"productlist": [{
 						"id": 101101,
+						"img":"image/dcfl03.png",
 						"name": "纯肉鲜肉(水饺)",
 						"count": 2,
-						"price": 15
+						"price": 15,
+						"specialty":1
 					},
 					{
 						"id": 101102,
+						"img":"image/dcfl04.png",
 						"name": "玉米鲜肉(水饺)",
 						"count": 1,
-						"price": 15
+						"price": 15,
+						"specialty":0
 					}
 				]
 				
@@ -52,17 +67,25 @@
 				"stause": "2",
 				"amount":"49",
 				"deliveryCost":3,
+				"address":"高新园区东软软件园3",
+				"user":"心静3",
+				"tel":"333456789101",
 				"productlist": [{
 						"id": 101101,
+						"img":"image/dcfl05.png",
 						"name": "101101纯肉鲜肉(水饺)",
 						"count": 2,
-						"price": 15
+						"price": 15,
+						"specialty":1
 					},
 					{
 						"id": 101102,
+						"img":"image/dcfl06.png",
 						"name": "101102玉米鲜肉(水饺)",
 						"count": 1,
-						"price": 15
+						"price": 15,
+						"specialty":0
+						
 					}
 				]
 
@@ -74,17 +97,24 @@
 				"stause": "2",
 				"amount":"59",
 				"deliveryCost":4,
+				"address":"高新园区东软软件园4",
+				"user":"心静4",
+				"tel":"443456789101",
 				"productlist": [{
 						"id": 102101,
+						"img":"image/dcfl07.png",
 						"name": "102101纯肉鲜肉(水饺)",
 						"count": 2,
-						"price": 15
+						"price": 15,
+						"specialty":1
 					},
 					{
 						"id": 102102,
+						"img":"image/dcfl08.png",
 						"name": "102102玉米鲜肉(水饺)",
 						"count": 1,
-						"price": 15
+						"price": 15,
+						"specialty":0
 					}
 				]
 			}

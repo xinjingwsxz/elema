@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<!-- 新增组件订单列表页 -->
 
 	<head>
 		<meta charset="utf-8">
@@ -18,19 +18,18 @@
 		<div id="index">
 			<router-link to="orderlist">orderlist</router-link>
 			<router-view></router-view>
-
-			<!-- <mainnav></mainnav> -->
+			<mainnav></mainnav> 
 			<gotopcpn></gotopcpn>
 		</div>
-
+		
 		<!-- 订单组件 -->
 		<template id="orderlistcpn">
 			<div id="orderlist">
 				<button @click="getOrderList">getOrder</button>
 				<div>
-					<header>
+					<topcpn >
 						我的订单
-					</header>
+					</topcpn>
 				</div>
 				<div>
 					<!-- 未支付订单信息 -->
@@ -76,7 +75,7 @@
 				</ul>
 			</div>
 		</template>
-		
+
 		<!-- //主导航主组件 -->
 		<template id="mainnavcpn">
 			<div>
@@ -86,13 +85,22 @@
 				<h6><i>首页</i></h6>
 			</div>
 		</template>
-		
+
 		<!-- 回顶部 -->
 		<template id="goTopTemp">
 			<div class="goTopTemp" @click="goTop" v-show="topDistance>100">
 				<i class="">{{topDistance}}</i>
 			</div>
 		</template>
+		
+		
+		<tmeplate id="toptemp">
+			<div class="toptemp">
+				<slot name="location"></slot>
+				<slot name="content"></slot>
+			</div>
+		</tmeplate>
+		
 		
 		<script src="./js/jquery-3.3.1.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
@@ -101,6 +109,8 @@
 		<script src="./js/vue-router.js"></script>
 		<script src="./js/elm_orderlist.js"></script>
 		<script src="./js/index.js"></script>
-
 	</body>
 </html>
+
+
+
