@@ -19,21 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dc822e4-cee1-4fbb-95ce-de1b14f1daf2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/order.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index22.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/orderlist.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/orderlist.json" afterDir="false" />
-    </list>
+    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="route ok" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

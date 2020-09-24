@@ -32,9 +32,7 @@ let elemaRouter = new VueRouter({
 });
 
 //主导航组件
-let mainNavCpn = Vue.extend({
-	template: "#mainnavcpn"
-});
+let mainNavCpn = Vue.extend({template: "#mainnavcpn"});
 let mainnav = Vue.component('mainnav', mainNavCpn);
 
 
