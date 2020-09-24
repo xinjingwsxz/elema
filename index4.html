@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<!-- 新增组件订单列表页 elm_orderlist.js elm_index.js-->
+	<!-- 新增组件订单详情页 商品信息组件 elm_order.js-->
+	<!-- 新增组件支付页面 -->
+
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap 模板</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+	</head>
+	<body>
+		<div id="index">
+			<router-link to="orderlist">orderlist</router-link>
+			<router-view></router-view>
+			<mainnav></mainnav>
+			<gotopcpn></gotopcpn>
+
+		</div>
+
+		<!-- 订单组件 -->
+		<template id="orderlistcpn">
+			<div id="orderlist">
+				<ordercpn v-show="isOrderShow" :orderinfo="orderInfo"></ordercpn>
+				<div v-show="!isOrderShow">
+					<button @click="getOrderList">getOrder</button>
+					<div>
+						<topcpn>
+							我的订单
+						</topcpn>
+					</div>
+					<div>
+						<!-- 未支付订单信息 -->
+						未支付订单信息:
+					</div>
+					<ul>
+						<!-- 商家列表 -->
+						<li v-for="(shop,index) in noPayList">
+							<div>{{shop.shopname}}</div>
+							<div>
+								<span>￥{{shop.amount}}</sapn>
+							</div>
+							<button @click="goPay(index)">去支付</button>
+							<ul>
+								<!-- 订餐内容列表 -->
+								<li v-for="(product,index) in shop.productlist">
+									<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
+								</li>
+								<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>
+							</ul>
+						</li>
+					</ul>
+					<div>
+						已支付订单信息:
+					</div>
+					<ul>
+						<!-- 已支付订单信息 -->
+						<li v-for="(shop,index) in alreadyPayList">
+							<!-- 商家列表 -->
+							<div>{{shop.shopname}}</div>
+							<div>
+								<span>￥{{shop.amount}}</sapn>
+							</div>
+							<button>去支付</button>
+							<ul>
+								<!-- 订餐内容列表 -->
+								<li v-for="(product,ind) in shop.productlist">
+									<span>{{product.name}} x {{product.count}}</span><span>￥15</span>
+								</li>
+								<li><span>配送费</span><span>￥{{shop.deliveryCost}}</span></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</template>
+
+
+
+
+		<!-- //主导航主组件 -->
+		<template id="mainnavcpn">
+			<div>
+				<h6><i>首页</i></h6>
+				<h6><i>首页</i></h6>
+				<h6><i>首页</i></h6>
+				<h6><i>首页</i></h6>
+			</div>
+		</template>
+
+
+
+		<!-- 回顶部 -->
+		<template id="goTopTemp">
+			<div class="goTopTemp" @click="goTop" v-show="topDistance>100">
+				<i class="">{{topDistance}}</i>
+			</div>
+		</template>
+
+		<!-- 顶部组件 -->
+		<tmeplate id="toptemp">
+			<div class="toptemp">
+				<slot name="location"></slot>
+				<slot name="content"></slot>
+				<slot name="back" @click="back"></slot>
+			</div>
+		</tmeplate>
+
+		<!-- 订单组件 -->
+		<template id="ordertemp">
+			<div id="order">
+				<paycpn v-show="!isShowOrder" :orderinfo="d_orderinfo" :paytypelist="payTypeList"></paycpn>
+				<div v-show="isShowOrder">
+					<!-- 头部 -->
+					<topcpn>
+						<div slot="location">订单确认</div>
+						<div slot="content"></div>
+					</topcpn>
+					<!-- 内容 -->
+					<div>
+						<div>
+							订单配送至
+						</div>
+						<div>{{orderinfo.address}}</div>
+						<div>
+							<span>{{orderinfo.user}}</span>
+							<span>* * * {{orderinfo.tel}}</span>
+						</div>
+						<div>{{orderinfo.shopname}}</div>
+						<productinfocpn v-for="(product , index) in orderinfo.productlist" :productinfo="product"></productinfocpn>
+						<div>
+							<span>配送费</span>
+							<span>{{orderinfo.deliveryCost | moneyFmt}}</span>
+						</div>
+					</div>
+
+					<!-- 底部 -->
+					<div>
+						<div>{{orderinfo.amount | moneyFmt}}</div>
+						<button @click="pay">支付</button>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<!-- 商品信息组件 -->
+		<template id="productInfotemp">
+			<div class="productInfotemp">
+				<div>
+					<!-- 第一列 -->
+					<div v-show="productinfo.specialty">招牌</div>
+					<img :src="productinfo.img" alt="">
+				</div>
+
+				<!-- 第二列 -->
+				<div>
+					<span>{{productinfo.name}} x {{productinfo.count}}</span>
+				</div>
+				<!-- 第三列 -->
+				<div>{{productinfo.price | moneyFmt}}</div>
+			</div>
+		</template>
+
+		<!-- 支付组件 -->
+		<template id="paytemp">
+			<div class="paytemp">
+				<topcpn>
+					<div slot="location">在线支付</div>
+				</topcpn>
+				<div>
+					订单信息:
+				</div>
+				<div>
+					<span>{{orderinfo.shopname}}</span><span>{{orderinfo.amount | moneyFmt}}</span>
+					<ul>
+						<li v-for="(product,index) in orderinfo.productlist">
+							<span>{{product.name}}</span><span>{{product.price | moneyFmt}}</span>
+						</li>
+						<li>
+							<span>配送费</span><span>{{orderinfo.deliveryCost | moneyFmt}}</span>
+						</li>
+					</ul>
+				</div>
+				<!-- 支付方式 -->
+				<div>
+					<ul>
+						<li v-for="(paytype , index ) in paytypelist">
+							<label>
+								<img :src="paytype.img" alt="">
+								<input type="radio" name="paytype" v-model="paytypeId" :value="paytype.id">
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<button type="button" @click="pay">确认支付</button>
+				</div>
+			</div>
+		</template>
+		<script src="./js/jquery-3.3.1.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/vue.js"></script>
+		<script src="./js/vue-resources.js"></script>
+		<script src="./js/vue-router.js"></script>
+		<script src="./js/elm_product.js"></script>
+		<script src="./js/elm_orderlist.js"></script>
+		<script src="./js/elm_order.js"></script>
+		<script src="./js/elm_pay.js"></script>
+		<script src="./js/index.js"></script>
+
+
+
+	</body>
+</html>

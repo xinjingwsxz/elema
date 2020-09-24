@@ -1,0 +1,18 @@
+{
+	"type": 12,
+	"pageNum": 3,
+	"dataZone": {
+		"list": [
+			{
+				"id":1,
+				"name":"支付宝",
+				"img":"image/alipay.png"
+			},
+			{
+				"id":2,
+				"name":"微信",
+				"img":"image/wechat.png"
+			}
+		]
+	}
+}

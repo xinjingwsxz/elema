@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap 模板</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="index">
+			<ordertcpn></ordertcpn>
+		</div> 
+		
+		
+		
+	<!-- 订单组件 -->
+	<template id="ordertemp">
+		<div id="order">
+			<!-- 头部 -->
+			<topcpn>
+				<div v-slot="location">订单确认</div>
+				<div v-slot="content">
+					<div>
+						订单配送至
+					</div>
+					<div>address高新园区东软软件园</div>
+					<div>
+						<span>username心静</span>
+						<span>usertel123456</span>
+					</div>
+				</div>
+			</topcpn> 
+			
+			<!-- 内容 -->
+			<div>
+				<div>shopname万家饺子</div>
+				<productinfocpn></productinfocpn>
+				<div>
+					<span>配送费</span>
+					<span>￥15</span>
+				</div>
+			</div> 
+			
+			<!-- 底部 -->
+		</div>
+	</template>	
+		
+		
+
+<!-- 商品信息组件 -->
+ <tmeplate id="productInfotemp">
+	<div class="productInfotemp">
+		<div><!-- 第一列 -->
+			<div>招牌</div>
+			<img src="" alt="">
+		</div> 
+		
+		<!-- 第二列 -->
+		<div>
+			<span>productname水饺 x 2</span>
+		</div> 
+		<!-- 第三列 -->
+		<div>￥15</div>
+	</div>
+	
+</tmeplate> 
+
+
+<!--头部组件 -->
+		<tmeplate id="toptemp">
+			<div class="toptemp">
+				<slot name="location"></slot>
+				<slot name="content"></slot>
+			</div>
+		</tmeplate>
+
+		<script src="./js/jquery-3.3.1.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/vue.js"></script>
+		<script src="./js/vue-resources.js"></script>
+		<script src="./js/vue-router.js"></script>
+		<script src="./js/index.js"></script>
+
+
+	</body>
+</html>

@@ -1,0 +1,3 @@
+let  maintemp= {
+	template: "#maintemp",
+}

@@ -1,0 +1,3 @@
+let minetemp = {
+	template: "#minetemp",
+}
