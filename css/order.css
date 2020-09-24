@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#orderlist header{
+    height: 50px;
+    line-height: 50px;
+}
+.mainnavcpn{
+    background-color: rgba(255,255,255,1);
+    border-top: rgba(221,221,221,1) 1px solid;
+    text-align: center;
+}
+.mainnavcpn i{
+    display: block;
+}
+.goTopTemp{
+    position: fixed;
+    right: 2em;
+    bottom: 4em;
+}
+button{
+    height: 30px;
+    width: 40px;
+}

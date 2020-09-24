@@ -48,19 +48,19 @@
 			{
 				"id": 103,
 				"shopid": "101",
-				"shopname": "101万家饺子(软件园E18号店)",
+				"shopname": "万家饺子(软件园E18号店)",
 				"stause": "2",
 				"amount":"49",
 				"deliveryCost":3,
 				"productlist": [{
 						"id": 101101,
-						"name": "101101纯肉鲜肉(水饺)",
+						"name": "纯肉鲜肉(水饺)",
 						"count": 2,
 						"price": 15
 					},
 					{
 						"id": 101102,
-						"name": "101102玉米鲜肉(水饺)",
+						"name": "玉米鲜肉(水饺)",
 						"count": 1,
 						"price": 15
 					}
@@ -70,19 +70,19 @@
 			{
 				"id": 104,
 				"shopid": "102",
-				"shopname": "102小锅豆腐饭馆(全运店)",
+				"shopname": "小锅豆腐饭馆(全运店)",
 				"stause": "2",
 				"amount":"59",
 				"deliveryCost":4,
 				"productlist": [{
 						"id": 102101,
-						"name": "102101纯肉鲜肉(水饺)",
+						"name": "纯肉鲜肉(水饺)",
 						"count": 2,
 						"price": 15
 					},
 					{
 						"id": 102102,
-						"name": "102102玉米鲜肉(水饺)",
+						"name": "玉米鲜肉(水饺)",
 						"count": 1,
 						"price": 15
 					}
