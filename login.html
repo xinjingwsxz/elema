@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引入 Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/order.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" rel="external nofollow" ></script>          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js" rel="external nofollow" ></script>       <![endif]-->
+</head>
+<body>
+<div id="app">
+<mainnavcpn></mainnavcpn>
+</div>
+<!-- 订单组件 -->
+<template id="homeTemp">
+    <div>
+        <topbannercpn>
+            <div slot="loc" v-on:click="myFunc(age,$event)">
+                <i class="fa fa-location-arrow"></i>大连市东软信息学院<i class="fa fa-arrow-circle-o-down"></i>
+            </div>
+
+            <div slot="content" class="fixed-top">
+                <div class="input-group mb-3 mt-3 col-10 offset-1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-search"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username">
+                </div>
+            </div>
+        </topbannercpn>
+        <typecpn></typecpn>
+        <!--        <div style="height: 2000px;background-color: #ff6600">-->
+        <!--            <ul>-->
+        <!--                <li v-for="(item,index) in cgoodlists">{{item.gname}} &#45;&#45; {{item.gcount}}</li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
+<!--页面底部的主导航-->
+<template id="mainNavTemp">
+    <div class="container-fluid fixed-bottom mainNavTemp text-muted">
+        <div class="row">
+            <router-link to="/home">
+                <h6 class="col-2 offset-2 mt-1"><i class="fa fa-home"></i>首页</h6>
+            </router-link>
+            <router-link to="/mou">
+                <h6 class="col-2"><i class="fa fa-home"></i>发现</h6>
+            </router-link>
+            <h6 class="col-2"><i class="fa fa-home"></i>首页</h6>
+            <h6 class="col-2"><i class="fa fa-home"></i>首页</h6>
+        </div>
+    </div>
+</template>
+
+<template id="regitTemp">
+<div>
+
+    <span>手机登录：</span><input type="text">
+    <span>密码：</span><input type="text">
+    <button>登录</button>
+    <button>去注册</button>
+    <mainnav></mainnav>
+    <gotopcpn></gotopcpn>
+</div>
+
+</template>
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="js/jquery-3.3.1.js" ></script>
+<!-- 包括所有已编译的插件 -->
+<script src="js/bootstrap.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/vue-resources.js"></script>
+<script src="js/vue-router.js"></script>
+<script src="js/order.js"></script>
+<script>
+    //创建组件
+    let homeCpn = Vue.extend({
+        template:'#homeTemp',
+        props:['cgoodlists']
+    });
+    let mainNavCpn = Vue.extend({
+        template:'#mainNavTemp'
+    });
+    let regitCpn = Vue.extend()({
+        template:'#regitTemp',
+    });
+    //注册组件
+    let mainnavcpn = Vue.component('mainnavcpn',mainNavCpn);
+    let homecpn = Vue.component('homecpn',homeCpn);
+    let regitcpn = Vue.component('regitcpn',regitCpn);
+</script>
+</body>
+</html>

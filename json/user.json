@@ -1,0 +1,15 @@
+{
+  "type":12,
+  "pageNum":3,
+  "dataZone":{
+    "list":[
+      {
+        "uid":1,
+        "uname": "张三",
+        "password": 1234,
+        "tel": 12345678910,
+        "sex": "男"
+      }
+    ]
+  }
+}

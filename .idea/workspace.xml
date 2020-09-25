@@ -19,7 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="route ok" />
+    <list default="true" id="6dc822e4-cee1-4fbb-95ce-de1b14f1daf2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/indexT.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/elm_login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/elm_register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/elm_smallregister.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/user.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/模板.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index22.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +42,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -45,6 +60,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -79,6 +95,8 @@
       <workItem from="1600826131898" duration="258000" />
       <workItem from="1600908987218" duration="20000" />
       <workItem from="1600909020740" duration="633000" />
+      <workItem from="1600953007314" duration="656000" />
+      <workItem from="1600994922932" duration="14927000" />
     </task>
     <task id="LOCAL-00001" summary="order json ok">
       <created>1600769630801</created>

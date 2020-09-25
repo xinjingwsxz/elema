@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!-- 新增组件订单列表页 elm_orderlist.js elm_index.js-->
+<!-- 新增组件订单详情页 商品信息组件 elm_order.js-->
+<!-- 新增组件支付页面 -->
+<!-- 添加返回 -->
+<!-- 支付页商品详细信息显隐 -->
+<!-- 使用主导航路由 搭建导航框架 产生 我的 发现 和 首页 显隐 -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/order.css" rel="stylesheet" />
+    <link href="css/base.css" rel="stylesheet" />
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--		&lt;!&ndash;[if lt IE 9]>-->
+    <!--         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+    <!--         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>-->
+    <!--[endif]-->
+</head>
+<body>
+
+<div id="app">
+    <smallregistercpn></smallregistercpn>
+</div>
+<!--<template id="smallRegister">-->
+<!--    <div class="container-fluid">-->
+<!--        <div class="row input-group mb-3 col-8 ">-->
+<!--            <div class="row input-group mb-3 col-8 ">-->
+<!--                <div class=" col-5 text-left">-->
+<!--                    <h4 class="font-weight-bold ">手机号码 : </h4>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control" placeholder="手机号码" >-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row input-group mb-3 col-8 ">-->
+<!--            <div class="input-group-prepend col-5 text-left">-->
+<!--                <h4 class="font-weight-bold">密码 : </h4>-->
+<!--            </div>-->
+<!--            <input type="text" class="form-control" placeholder="密码">-->
+<!--        </div>-->
+    <div class="row">
+        <h4 class="col-2" style="margin: 0px; padding:0px">手机号码：</h4> <input type="text" class="col-10">
+        <h4 class="col-2 "style="margin: 0px; padding:0px">密码：</h4> <input type="text" class="col-10">
+        <h4 class="col-2"style="margin: 0px; padding:0px">确认密码：</h4> <input type="text" class="col-10">
+        <h4 class="col-2"style="margin: 0px; padding:0px">用户姓名：</h4> <input type="text" class="col-10">
+        <h4 class="col-2"style="margin: 0px; padding:0px">性别：</h4><input type="radio" name="1">男<input type="radio" name="2">女
+    </div>
+    </div>
+</template>
+<script src="js/vue.js"></script>
+<script>
+
+    let  smallRegisterTemp= {
+        template: "#smallRegister",
+    }
+    let smallregistercpn = Vue.component('smallregistercpn', smallRegisterTemp);
+    const vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+
+    });
+
+</script>
+<script src="./js/jquery-3.3.1.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/vue-resources.js"></script>
+<script src="./js/vue-router.js"></script>
+<script src="./js/elm_login.js"></script>
+<script src="./js/elm_discover.js"></script>
+<script src="./js/elm_mine.js"></script>
+<script src="./js/elm_main.js"></script>
+<script src="./js/elm_product.js"></script>
+<script src="./js/elm_orderlist.js"></script>
+<script src="./js/elm_order.js"></script>
+<script src="./js/elm_pay.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

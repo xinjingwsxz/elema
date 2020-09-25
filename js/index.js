@@ -6,7 +6,12 @@ Vue.filter('moneyFmt', function(value) {
 });
 
 //路由
-let routers = [{
+let routers = [
+	{
+		path: "/register",
+		component: registberTemp
+	},
+	{
 		path: "/orderlist",
 		component: orderList
 	},
@@ -25,7 +30,8 @@ let routers = [{
 	{
 		path: "/*",
 		component: maintemp
-	}
+	},
+
 ]
 let elemaRouter = new VueRouter({
 	routes: routers
