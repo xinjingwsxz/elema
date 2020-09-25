@@ -1,0 +1,55 @@
+.shoplisttemp img{
+	width: 100%;
+	max-width: 150px;
+}
+.recommend-line{
+	width: 6vw;
+    height: 0.2vw;
+    background-color: #888
+}
+.mainadvertisingbg{
+	width: 95%;
+	height: 30vw;
+	margin:0 auto;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.forfixtop{
+	margin-top:7em ;
+}
+.buy .shopimg{
+	max-width: 300px;
+}
+.cicel{
+	position:relative ;
+	border-radius: 50%;
+	width:2em;
+	height: 2em;
+	line-height: 0;
+	border: 0.3em solid #343A40;
+	font-size: 2em;
+	margin:0;
+	padding:0;
+	top: -1em;
+	box-sizing: content-box;
+	
+}
+.cicel .incicel{
+	position: relative;
+	top: 0.5em;
+	left:-0.03em;
+}
+.smallredcicel{
+	position:absolute;
+	background-color: red;
+	border-radius: 50%;
+	right: -1.8em;
+	top:-1.8em;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 0.5em;
+}
+.pointer{
+	cursor: pointer;
+}

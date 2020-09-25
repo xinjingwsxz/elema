@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+	<!-- 新增组件订单列表页 elm_orderlist.js elm_index.js-->
+	<!-- 新增组件订单详情页 商品信息组件 elm_order.js-->
+	<!-- 新增组件支付页面 -->
+	<!-- 添加返回 -->
+	<!-- 支付页商品详细信息显隐 -->
+	<!-- 使用主导航路由 搭建导航框架 产生 我的 发现 和 首页 显隐 -->
+	<!-- 主页编写 -->
+	<!-- 主页主分类区 -->
+	<!-- 主页广告  -->
+	<!-- 主页跳转到商列表页 -->
+	<!-- 通过商户列表进店消费  -->
+	<!-- 跳转到订单结算页面 -->
+	<!-- 商家带参跳转 -->
+
+	<head>
+		<meta charset="utf-8">
+		<title>饿了吗</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href="css/font-awesome.css" rel="stylesheet" />
+		<link href="css/animate.css" rel="stylesheet" />
+		<link href="css/order.css" rel="stylesheet" />
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/elm_mian.css" rel="stylesheet" />
+
+		<style>
+
+		</style>
+
+		<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+	</head>
+	<body>
+		<div id="index">
+			<transition enter-active-class="animated fadeIn">
+				<router-view></router-view>
+			</transition>
+		</div>
+
+
+		<!-- //主导航主组件 -->
+		<template id="mainnavcpn">
+			<div class="container-fluid fixed-bottom mainnavcpn text-muted">
+				<div class="row">
+					<h6 class="col-3 ">
+						<router-link to="main">
+							<i class="fa fa-home"></i>首页
+						</router-link>
+					</h6>
+					<h6 class="col-3">
+						<router-link to="discover">
+							<i class="fa fa-compass"></i>发现
+						</router-link>
+					</h6>
+					<h6 class="col-3">
+						<router-link to="orderlist">
+							<i class="fa fa-file-text-o"></i>订单
+						</router-link>
+					</h6>
+					<h6 class="col-3">
+						<router-link to="mine">
+							<i class="fa fa-user-o"></i>我的
+						</router-link>
+					</h6>
+				</div>
+			</div>
+		</template>
+
+		<!-- 回顶部 -->
+		<template id="goTopTemp">
+			<div class="goTopTemp" @click="goTop" v-show="topDistance>100">
+				<i class="fa fa-arrow-circle-o-up"></i>
+			</div>
+		</template>
+
+		<!-- 顶部组件 -->
+		<template id="toptemp">
+			<div class="toptemp alert alert-primary text-center bg-primary text-white">
+				<h1>
+					<slot name="location"></slot>
+				</h1>
+				<slot name="content"></slot>
+				<div @click="back">
+					<slot name="back"></slot>
+				</div>
+			</div>
+		</template>
+		<!-- 首页 -->
+		<template id="maintemp">
+			<div class="main">
+				<topcpn>
+					<div slot="location">
+						<i class="fa fa-location-arrow"></i>饿了吗
+					</div>
+					<div slot="content" id="fixed" class="bg-primary">
+						<div class="input-group mb-3 mt-3 col-10 offset-1">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-search"></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Username">
+						</div>
+					</div>
+				</topcpn>
+				<maintypecpn :maintypelist="maintypelist"></maintypecpn>
+				<mainadvertisingcpn :mainadvertising="mainadvertising"></mainadvertisingcpn>
+				<shoplistcpn :shoplist="shoplist"></shoplistcpn>
+				<mainnav></mainnav>
+				<gotopcpn></gotopcpn>
+			</div>
+		</template>
+
+		<!-- 商店页 -->
+		<template id="shopstemp">
+			<div class="shops ">
+				<div class="container">
+					<div class="mb-5">
+						<topcpn class="fixed-top">
+							<div slot="location">
+								东软小吃一条街
+							</div>
+						</topcpn>
+					</div>
+					<div class="forfixtop">
+						<shoplistcpn :shoplist="shoplist"></shoplistcpn>
+					</div>
+
+					<mainnav></mainnav>
+					<gotopcpn></gotopcpn>
+				</div>
+			</div>
+		</template>
+
+		<!-- 主页广告 -->
+		<template id="mainadvertisingtemp">
+			<div class="mainadvertising">
+				<div class="pt-4 pl-5 mainadvertisingbg" v-for="(adver,index) in mainadvertising" :style="adver.img">
+					<h4>{{adver.title}}</h4>
+					<h4 class="text-muted">{{adver.content}}</h4>
+					<h4 class="text-warning">{{adver.hreftext}} <i class="fa fa-arrow-right"></i> </h4>
+				</div>
+			</div>
+		</template>
+
+		<!-- 主页分类列表 -->
+		<template id="maintypetemp">
+			<div class="maintype container">
+				<ul class="row text-center list-unstyled">
+					<li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" v-for="(type,index) in maintypelist">
+						<router-link to="shops">
+							<img :src="type.img">
+							<p>{{type.name}}</p>
+						</router-link>
+					</li>
+				</ul>
+			</div>
+		</template>
+
+
+		<!-- 商店列表组件 -->
+		<template id="shoplisttemp">
+			<div class="container-fluid shoplisttemp list-unstyled container">
+				<div class="row">
+					<div class="recommend-line col-3 offset-1 mt-3"></div>
+					<div class="col-4 mr-0 text-center">
+						<h3>推荐商家</h3>
+					</div>
+					<div class="recommend-line col-3 ml-0 mt-3"></div>
+				</div>
+				<br>
+				<ul class="row list-unstyled text-center">
+					<li class="col-3">综合排序<i class="dropdown-toggle"></i></li>
+					<li class="col-3">距离最近</li>
+					<li class="col-3">销量最高</li>
+					<li class="col-3">筛选<span class="fa fa-filter"></span></li>
+				</ul>
+				<br>
+				<div v-for="(shop,index) in shoplist">
+					<router-link to="buy">
+						<!--跳转到 -->
+						<div class="row  text-muted  border border-secondary mb-3" @click="setCurrentShop(index)">
+							<div class="col-12 col-sm-3 text-center">
+								<img :src="shop.img">
+							</div>
+							<div class="col-8 col-sm-5">
+								<h3 class="text-dark font-weight-bold">{{shop.name}}</h3>
+								<p><i class="fa fa-star text-warning" v-for="(item,index) in shop.star"></i>{{shop.sendstart | moneyFmt}}起送|{{shop.deliveryCost | moneyFmt}}配送费</p>
+								<p>{{shop.sspecialty}}</p>
+								<p v-for="(activity,index) in shop.activitys"> <span class="alert p-0 bg-success text-white text-center">{{activity.title}}</span>{{activity.content}}</p>
+							</div>
+							<div class="col-4 col-sm-4 text-right">
+								<p>&nbsp;</p>
+								<p>
+									<span class="bg-primary text-white alert p-0">{{shop.sendBy}}</span>
+								</p>
+								<p>{{shop.distance | distanceFmt}}|{{shop.sendtime | timeFmt}}</p>
+								<p>
+									{{shop.activitys.length}}个活动
+								</p>
+							</div>
+						</div>
+					</router-link>
+				</div>
+				<h3 class="text-center">-----------就这么多啦-----------</h3>
+			</div>
+		</template>
+
+		<!-- 购买页面 -->
+		<template id="buytemp">
+			<div class="buy">
+				<!-- <ordercpn v-show="isOrderShow" :orderinfo="orderInfo" v-on:back="reback"></ordercpn> -->
+				<div v-show="isOrderListShow">
+					<div class="fixed-top">
+						<topcpn>
+							<div slot="location">
+								剁手的时刻
+							</div>
+						</topcpn>
+					</div>
+					<div class="forfixtop container-fluid">
+
+						<!--shoptitle -->
+						<div class=" ">
+							<div class="row  text-center">
+								<img class="shopimg m-auto col-12" :src="shop.img" :alt="shop.name">
+								<h2 class="text col-12">{{shop.name}}</h2>
+								<p class="text-secondary col-12">{{shop.sendstart | moneyFmt}}起送|{{shop.deliveryCost | moneyFmt}}配送费</p>
+								<p class="text-secondary col-12">{{shop.sspecialty}}</p>
+							</div>
+						</div>
+						<!-- shopcontent -->
+						<div>
+							<productinfocpn :productlist="productList"></productinfocpn>
+						</div>
+
+						<!-- shopfoot -->
+						<div class="row">
+							<div class="alert col-9 alert-secondary p-0 pl-5 bg-secondary row">
+								<!-- left -->
+								<div class="row col-2">
+									<!-- outcicel -->
+									<div class="col-3">
+										<div class=" cicel text-center  bg-primary ">
+											<!-- middle cicle-->
+											<i class="fa fa-shopping-cart text-white incicel">
+												<!-- shop car -->
+												<div class="smallredcicel">
+													3
+												</div>
+											</i>
+										</div>
+									</div>
+								</div>
+								<div class="row col-3 offset-3 p-0">
+									<h4 class="col-12 mb-0 text-white">{{amount | moneyFmt}}</h4>
+									<p class="col-12 mb-0 text-dark">另需配送费{{shop.deliveryCost | moneyFmt}}</p>
+								</div>
+							</div>
+							<div class="col-3 alert alert-success text-white bg-success">
+								<router-link to="order">
+									<h3 class="text-center p-2 pointer" @click="goPay(0)">去结算</h3>
+								</router-link>
+							</div>
+						</div>
+					</div>
+					<gotopcpn></gotopcpn>
+				</div>
+			</div>
+		</template>
+
+
+		<!-- 发现 -->
+		<template id="discovertemp">
+			<div class="discover">
+				<topcpn>
+					<div slot="location">
+						看看有啥好吃的
+					</div>
+				</topcpn>
+				<mainnav></mainnav>
+				<gotopcpn></gotopcpn>
+			</div>
+		</template>
+
+
+		<!-- 我的 -->
+		<template id="minetemp">
+			<div class="mine">
+				<topcpn>
+					<div slot="location">一个程序员的自我修养</div>
+				</topcpn>
+				<mainnav></mainnav>
+				<gotopcpn></gotopcpn>
+			</div>
+		</template>
+
+
+
+		<!-- 订单组件列表 -->
+		<template id="orderlistcpn">
+			<div>
+				<div id="orderlist">
+					<ordercpn v-show="isOrderShow" :orderinfo="orderInfo" v-on:back="reback"></ordercpn>
+					<!-- <button @click="getOrderList">getOrder</button> -->
+					<div v-show="!isOrderShow">
+						<div>
+							<topcpn>
+								<div slot="location">我的订单</div>
+							</topcpn>
+						</div>
+						<div class="text-muted mt-2">
+							<!-- 未支付订单信息 -->
+							未支付订单信息:
+						</div>
+						<ul class="list-unstyled container-fluid">
+							<!-- 商家列表 -->
+							<li v-for="(shop,index) in noPayList " class="row">
+								<div class="nav-link dropdown-toggle  col-6  text-left">{{shop.shopname}}</div>
+								<div class="col-3 ">
+									<span class="font-weight-bold text-secondary text-center">￥{{shop.amount}}</span>
+								</div>
+								<button class="btn btn-warning btn-sm text-white col-2" @click="goPay(index)">去支付</button>
+								<ul class="list-unstyled container-fluid">
+									<!-- 订餐内容列表 -->
+									<li v-for="(product,index) in shop.productlist" class="small row">
+										<span class="col-10">{{product.name}} x {{product.count}}</span><span class="col-2">￥15</span>
+									</li>
+									<li class="small row"><span class="col-10">配送费</span><span class="col-2">￥{{shop.deliveryCost}}</span></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="text-muted">
+							已支付订单信息:
+						</div>
+						<ul class="list-unstyled container-fluid">
+							<!-- 已支付订单信息 -->
+							<li v-for="(shop,index) in alreadyPayList" class="row">
+								<!-- 商家列表 -->
+								<div class="dropdown-toggle col-10">{{shop.shopname}}</div>
+								<div class="font-weight-bold text-secondary float-right col-2">
+									<span>￥{{shop.amount}}</span>
+								</div>
+								<!--						<button>去支付</button>-->
+								<ul class="list-unstyled container-fluid">
+									<!-- 订餐内容列表 -->
+									<li v-for="(product,index) in shop.productlist" class="small row">
+										<span class="col-10">{{product.name}} x {{product.count}}</span><span class="col-2">￥15</span>
+									</li>
+									<li class="small row"><span class="col-10">配送费</span><span class="col-2">￥{{shop.deliveryCost}}</span></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<mainnav></mainnav>
+					<gotopcpn></gotopcpn>
+				</div>
+			</div>
+		</template>
+
+		<!-- 订单组件 -->
+		<template id="ordertemp">
+			<div id="order">
+				<!-- <paycpn v-show="isShowPay" :orderinfo="d_orderinfo" :paytypelist="payTypeList" v-on:back="reback"></paycpn> -->
+				<div>
+					<!-- 头部 -->
+					<topcpn @back="back">
+						<div slot="location">订单确认</div>
+						<div slot="content"></div>
+						<div slot="back">返回</div>
+					</topcpn>
+					<!-- 内容 -->
+					<div v-for="(order,orderIndex) in orderList">
+						<div>
+							<div>
+								订单配送至
+							</div>
+							<div>{{order.user.address}}</div>
+							<div>
+								<span>{{order.user.user}}</span>
+								<span>* * * {{order.user.tel}}</span>
+							</div>
+							<div>{{order.shop.shopname}}</div>
+							<!-- <productinfocpn :productlist="productlist"></productinfocpn> -->
+							<div>
+								<span>配送费</span>
+								<span>{{order.shop.deliveryCost | moneyFmt}}</span>
+							</div>
+						</div>
+						<!-- 底部 -->
+						<div>
+							<div>{{order.shop.amount+order.shop.deliveryCost | moneyFmt}}</div>
+							<router-link to="pay">
+								<button @click="pay">支付</button>
+							</router-link>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<!-- 商品信息组件 -->
+		<template id="productInfotemp">
+			<div class="productInfotemp container-fluid">
+				<div class="row border-bottom mb-3 pb-3" v-for="(productinfo,index) in productlist">
+					<div class="col-12 col-sm-3 text-center">
+						<!-- 第一列 -->
+						<div v-show="productinfo.specialty">招牌</div>
+						<img :src="productinfo.img" alt="">
+					</div>
+
+					<!-- 第二列 -->
+					<div class="col-6 col-sm-5 text-left">
+						<h3 class="text-capitalize font-weight-bold text-secondary">{{productinfo.name}} </h3>
+						<p class="text-muted">{{productinfo.detailed}}</p>
+						<p class="text-muted">{{productinfo.price | moneyFmt}}</p>
+					</div>
+					<!-- 第三列 -->
+					<div class="col-4 col-sm-3 text-right">
+						<div class="count row m-0 text-center">
+							<button class="btn-block col-3 offset-2 text-center btn border border-info text-info fa-arrow-circle-down fa"
+							 @click="change(0,index)" v-bind:disabled="productinfo.count<=0"></button>
+							<span class="col-2 p-0">{{productinfo.count}}</span>
+							<button class="btn-block col-3 text-center btn border border-danger text-danger fa-arrow-circle-up fa" @click="change(1,index)"
+							 v-bind:disabled="productinfo.count>98"></button>
+							<div class="col-12 mt-5" v-show="productinfo.count">共计:{{productinfo.price*productinfo.count | moneyFmt}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<!-- 支付组件 -->
+		<template id="paytemp">
+			<div class="paytemp">
+				<topcpn @back="back">
+					<div slot="location">在线支付</div>
+					<div slot="back">返回</div>
+				</topcpn>
+				<div>
+					订单信息:
+				</div>
+				<div>
+					<span click="isShowProductList=!isShowProductList">{s{orderinfo.shopname}}</span><span>{s{orderinfo.amount | moneyFmt}}</span>
+					<ul v-show="1">
+						<li >
+							<span>{s{product.name}} {s{product.price | moneyFmt}} x {s{product.count}}</span><span>{s{product.price*product.count | moneyFmt}}</span>
+						</li>
+						<li>
+							<span>配送费</span><span>{s{orderinfo.deliveryCost | moneyFmt}}</span>
+						</li>
+					</ul>
+				</div>
+				<!-- 支付方式 -->
+				<div>
+					<ul>
+						<li v-for="(paytype , index ) in payTypeList">
+							<label>
+								<img :src="paytype.img" alt="">
+								<input type="radio" name="paytype" v-model="paytypeId" :value="paytype.id">
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<button type="button" @click="pay">确认支付</button>
+				</div>
+			</div>
+		</template>
+		<script src="./js/jquery-3.3.1.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/vue.js"></script>
+		<script src="./js/vue-resources.js"></script>
+		<script src="./js/vue-router.js"></script>
+
+
+		<script src="./js/elm_globaldata.js"></script>
+		<script src="./js/elm_product.js"></script>
+		<script src="./js/elm_order.js"></script>
+		<script src="./js/elm_pay.js"></script>
+		<script src="./js/elm_shops.js"></script>
+		<script src="./js/elm_shoplist.js"></script>
+		<script src="./js/elm_orderlist.js"></script>
+
+		<script src="./js/elm_discover.js"></script>
+		<script src="./js/elm_mine.js"></script>
+		<script src="./js/elm_main.js"></script>
+
+		<script src="./js/index.js"></script>
+
+	</body>
+</html>

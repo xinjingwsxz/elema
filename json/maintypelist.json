@@ -1,0 +1,58 @@
+{
+	"type": 12,
+	"pageNum": 3,
+	"dataZone": {
+		"list": [
+			{
+				"id":1001,
+				"img":"image/dcfl01.png",
+				"name":"美食"
+			},
+			{
+				"id":1002,
+				"img":"image/dcfl02.png",
+				"name":"早餐"
+			},
+			{
+				"id":1003,
+				"img":"image/dcfl03.png",
+				"name":"跑腿代购"
+			},
+			{
+				"id":1004,
+				"img":"image/dcfl04.png",
+				"name":"汉堡披萨"
+			},
+			{
+				"id":1005,
+				"img":"image/dcfl05.png",
+				"name":"甜品饮品"
+			},
+			{
+				"id":1006,
+				"img":"image/dcfl05.png",
+				"name":"素食简餐"
+			},
+			{
+				"id":1007,
+				"img":"image/dcfl07.png",
+				"name":"地方小吃"
+			},
+			{
+				"id":1008,
+				"img":"image/dcfl08.png",
+				"name":"米粉面馆"
+			},
+			{
+				"id":1009,
+				"img":"image/dcfl09.png",
+				"name":"包子粥"
+			},
+			{
+				"id":1010,
+				"img":"image/dcfl10.png",
+				"name":"炸鸡炸串"
+			}
+		]
+	}
+}

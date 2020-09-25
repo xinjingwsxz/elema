@@ -9,30 +9,37 @@
 				"stause": "1",
 				"amount":"79",
 				"deliveryCost":6,
+				
 				"productlist": [{
 						"id": 101101,
 						"name": "纯肉鲜肉(水饺)",
+						"img":"image/sj08.png",
 						"count": 2,
 						"price": 15
 					},
 					{
 						"id": 101102,
 						"name": "玉米鲜肉(水饺)",
+						"img":"image/sj07.png",
 						"count": 1,
 						"price": 15
 					}
 				]
 			},
 			{
-				"id": 101,
-				"shopid": "101",
+				"id": 102,
+				"shopid": "102",
 				"shopname": "小锅豆腐饭馆(全运店)",
 				"stause": "1",
 				"amount":"89",
 				"deliveryCost":5,
+				"address":"东软睿道java62班",
+				"user":"我很帅2",
+				"tel":"22345678910",
 				"productlist": [{
 						"id": 101101,
 						"name": "纯肉鲜肉(水饺)",
+						"img":"image/sj06.png",
 						"count": 2,
 						"price": 15
 					},
@@ -40,6 +47,7 @@
 						"id": 101102,
 						"name": "玉米鲜肉(水饺)",
 						"count": 1,
+						"img":"image/sj05.png",
 						"price": 15
 					}
 				]
@@ -52,15 +60,20 @@
 				"stause": "2",
 				"amount":"49",
 				"deliveryCost":3,
+				"address":"东软睿道java63班",
+				"user":"我很帅3",
+				"tel":"32345678910",
 				"productlist": [{
 						"id": 101101,
 						"name": "纯肉鲜肉(水饺)",
+						"img":"image/sj01.png",
 						"count": 2,
 						"price": 15
 					},
 					{
 						"id": 101102,
 						"name": "玉米鲜肉(水饺)",
+						"img":"image/sj02.png",
 						"count": 1,
 						"price": 15
 					}
@@ -74,15 +87,20 @@
 				"stause": "2",
 				"amount":"59",
 				"deliveryCost":4,
+				"address":"东软睿道java64班",
+				"user":"我很帅4",
+				"tel":"42345678910",
 				"productlist": [{
 						"id": 102101,
 						"name": "纯肉鲜肉(水饺)",
+						"img":"image/sj03.png",
 						"count": 2,
 						"price": 15
 					},
 					{
 						"id": 102102,
 						"name": "玉米鲜肉(水饺)",
+						"img":"image/sj04.png",
 						"count": 1,
 						"price": 15
 					}

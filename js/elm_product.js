@@ -3,15 +3,17 @@
 let productInfotemp = Vue.extend({
 	template: "#productInfotemp",
 	props:{
-		productinfo:{}
-	},
-	mounted(){
+		productlist:""
 	},
 	methods:{
-		show(){
-			console.log(this.productinfo);
+		change(c,index){
+			if(c){
+				this.productlist[index].count++;
+			}else{
+				this.productlist[index].count--;
+			}
 		}
-	}
+	},
 	
 });
 let productInfocpn = Vue.component('productinfocpn', productInfotemp);

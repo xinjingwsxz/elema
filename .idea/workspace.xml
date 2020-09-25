@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="route ok" />
+    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="route ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +69,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6dc822e4-cee1-4fbb-95ce-de1b14f1daf2" name="Default Changelist" comment="" />
+      <changelist id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="route ok" />
       <created>1600766192538</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -79,6 +81,7 @@
       <workItem from="1600826131898" duration="258000" />
       <workItem from="1600908987218" duration="20000" />
       <workItem from="1600909020740" duration="633000" />
+      <workItem from="1600918322836" duration="1144000" />
     </task>
     <task id="LOCAL-00001" summary="order json ok">
       <created>1600769630801</created>
@@ -129,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600826357574</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="route ok">
+      <created>1600918536439</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600918536439</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,17 +165,18 @@
     <MESSAGE value="orderlist js get data and show ok" />
     <MESSAGE value="orderlist js get data and show and add some files ok" />
     <MESSAGE value="main nav html and reg ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="main nav html and reg ok" />
+    <MESSAGE value="route ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="route ok" />
   </component>
   <component name="WindowStateProjectService">
     <state width="623" height="498" key="SwitcherDM" timestamp="1600771977968">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1440.860@0.0.1440.860" timestamp="1600771977968" />
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600826396124">
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600918888822">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600826396124" />
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600918888822" />
     <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600831596259">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

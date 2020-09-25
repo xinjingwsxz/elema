@@ -1,0 +1,13 @@
+*{
+	margin:0;
+	padidng:0;
+}
+a{
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+a:hover,.tborange{
+	color:rgb(255, 68, 0);
+	text-decoration: none;
+}

@@ -6,6 +6,7 @@
 	<!-- 添加返回 -->
 	<!-- 支付页商品详细信息显隐 -->
 	<!-- 使用主导航路由 搭建导航框架 产生 我的 发现 和 首页 显隐 -->
+	<!-- 主页编写 -->
 
 	<head>
 		<meta charset="utf-8">
@@ -17,6 +18,9 @@
 		<link href="css/animate.css" rel="stylesheet" />
 		<link href="css/order.css" rel="stylesheet" />
 		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/elm_mian.css" rel="stylesheet" />
+		
+		
 		<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
 		<!--[if lt IE 9]>
@@ -69,9 +73,11 @@
 		</template>
 
 		<!-- 顶部组件 -->
-		<tmeplate id="toptemp">
-			<div class="toptemp">
-				<slot name="location"></slot>
+		<tmeplate id="toptemp" >
+			<div>
+				<h1>
+					<slot name="location"></slot>
+				</h1>
 				<slot name="content"></slot>
 				<div @click="back">
 					<slot name="back"></slot>
@@ -81,17 +87,54 @@
 
 		<!-- 首页 -->
 		<template id="maintemp">
-			<div>
-				<div class="main">
-					<topcpn>
-						<div slot="location">饿了吗</div>
-					</topcpn>
-				</div>
+			<div class="main">
+				<topcpn  class="toptemp alert alert-primary text-center bg-primary text-white">
+					<div slot="location" v-on:click="myFunc(age,$event)">
+						<i class="fa fa-location-arrow"></i>饿了吗
+					</div>
+					<div slot="content" id="fixed" class="bg-primary">
+						<div class="input-group mb-3 mt-3 col-10 offset-1">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-search"></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Username">
+						</div>
+					</div>
+				</topcpn>
+				<shoplistcpn v-for="(shop,index) in shoplist" :shop="shop" ></shoplistcpn>
 				<mainnav></mainnav>
 				<gotopcpn></gotopcpn>
 			</div>
 		</template>
-
+		
+		<!-- 商店组件 -->
+		<template id="shoplisttemp">
+			<div class="container-fluid shoplisttemp border border-secondary mb-3">
+				<div class="row  text-muted">
+					<div class="col-12 col-sm-4 ">
+						<img :src="shop.img" >
+					</div>
+					<div class="col-8 col-sm-4">
+						<h3 class="text-dark font-weight-bold">{{shop.name}}</h3>
+						<p><i class="fa fa-star text-warning"></i>{{shop.sendstart | moneyFmt}}起送|{{shop.deliveryCost | moneyFmt}}配送费</p>
+						<p>{{shop.sspecialty}}</p>
+						<p v-for="(activity,index) in shop.activitys"> <span class="alert p-0 bg-success text-white text-center">{{activity.title}}</span>{{activity.content}}</p>
+					</div>
+					<div class="col-4 col-sm-4 text-right">
+						<p>&nbsp;</p>
+						<p>
+							<span class="bg-primary text-white alert p-0">{{shop.sendBy}}</span>
+						</p>
+						<p>{{shop.distance | distanceFmt}}|{{shop.sendtime | timeFmt}}</p>
+						<p>
+							{{shop.activitys.length}}个活动
+						</p>
+					</div>
+				</div>
+			</div>
+		</template>
+		
+		
 		<!-- 发现 -->
 		<template id="discovertemp">
 			<div class="discover">
@@ -101,7 +144,6 @@
 				<mainnav></mainnav>
 				<gotopcpn></gotopcpn>
 			</div>
-
 		</template>
 
 
@@ -114,7 +156,6 @@
 				<mainnav></mainnav>
 				<gotopcpn></gotopcpn>
 			</div>
-
 		</template>
 
 
@@ -280,6 +321,7 @@
 		<script src="./js/vue.js"></script>
 		<script src="./js/vue-resources.js"></script>
 		<script src="./js/vue-router.js"></script>
+		<script src="./js/elm_shoplist.js"></script>
 		<script src="./js/elm_discover.js"></script>
 		<script src="./js/elm_mine.js"></script>
 		<script src="./js/elm_main.js"></script>
@@ -288,6 +330,8 @@
 		<script src="./js/elm_order.js"></script>
 		<script src="./js/elm_pay.js"></script>
 		<script src="./js/index.js"></script>
+		
+		
 
 
 

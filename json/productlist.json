@@ -1,0 +1,79 @@
+{
+	"type": 12,
+	"pageNum": 3,
+	"dataZone": {
+		"list": [{
+				"id": 101101,
+				"shop":101,
+				"name": "纯肉鲜肉(水饺)",
+				"img":"image/sj01.png",
+				"detailed":"玉米鲜肉",
+				"count": 2,
+				"price": 11
+			},
+			{
+				"id": 101102,
+				"shop":101,
+				"name": "玉米鲜肉(水饺)",
+				"img":"image/sj02.png",
+				"detailed":"玉米鲜肉",
+				"count": 1,
+				"price": 12
+			},
+			{
+				"id": 101103,
+				"shop":101,
+				"name": "酸菜鲜肉(水饺)",
+				"img":"image/sj03.png",
+				"detailed":"玉米鲜肉",
+				"count": 2,
+				"price": 13
+			},
+			{
+				"id": 101104,
+				"shop":101,
+				"name": "芹菜鲜肉(水饺)",
+				"detailed":"玉米鲜肉",
+				"img":"image/sj04.png",
+				"count": 1,
+				"price": 14
+			},
+			{
+					"id": 101105,
+					"shop":102,
+					"name": "纯肉鲜肉(水饺)",
+					"img":"image/sj05.png",
+					"detailed":"玉米鲜肉",
+					"count": 2,
+					"price": 15
+				},
+				{
+					"id": 101106,
+					"shop":102,
+					"name": "玉米鲜肉(水饺)",
+					"img":"image/sj06.png",
+					"detailed":"玉米鲜肉",
+					"count": 1,
+					"price": 15
+				},
+				{
+					"id": 101107,
+					"shop":103,
+					"name": "酸菜鲜肉(水饺)",
+					"img":"image/sj06.png",
+					"detailed":"玉米鲜肉",
+					"count": 2,
+					"price": 16
+				},
+				{
+					"id": 101108,
+					"shop":104,
+					"name": "芹菜鲜肉(水饺)",
+					"detailed":"玉米鲜肉",
+					"img":"image/sj08.png",
+					"count": 1,
+					"price": 17
+				}
+		]
+	}
+}

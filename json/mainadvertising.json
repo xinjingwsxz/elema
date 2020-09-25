@@ -1,0 +1,16 @@
+{
+	"type": 12,
+	"pageNum": 3,
+	"dataZone": {
+		"list": [
+			{
+				"id":1,
+				"title":"品质套餐",
+				"content":"搭配齐全吃得好",
+				"hreftext":"立刻抢购",
+				"img":"./image/index_banner.png"
+			}
+		]
+		
+	}
+}

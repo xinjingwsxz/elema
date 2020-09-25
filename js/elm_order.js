@@ -3,27 +3,25 @@ let ordertemp = Vue.extend({
 	template: "#ordertemp",
 	data:function (){
 		return{
-			isShowOrder:true,
-			d_orderinfo:{},
-			payTypeList:[],
-			isShowPay:false
+			orderList:[]
 		}
 	},
-	props:{
-		orderinfo:""//定义一个数据接收上级传来的数据
-	},                   
+	mounted(){
+		this.orderList=g_currentList;
+		console.log(g_currentList);
+	},
 	methods:{
 		pay(){
 			console.log("pay");
-			console.log(this.orderinfo);
-			this.d_orderinfo = this.orderinfo;
-			this.isShowOrder=false;
-			this.isShowPay=true;
-			this.$http.get("./json/paytype.json").then(
-				function (res){
-					this.payTypeList = res.body.dataZone.list;
-				}
-			,getDataFailed);
+			// console.log(this.orderinfo);
+			// this.productlist = this.orderinfo.productlist;
+			// this.isShowOrder=false;
+			// this.isShowPay=true;
+			// this.$http.get("./json/paytype.json").then(
+			// 	function (res){
+			// 		this.payTypeList = res.body.dataZone.list;
+			// 	}
+			// ,getDataFailed);
 		},
 		reback(){
 			console.log("kkk");
@@ -34,9 +32,6 @@ let ordertemp = Vue.extend({
 			console.log("order.back");
 			this.$emit("back","1");
 		}
-		
-		
-		
 	}
 });
 let ordercpn = Vue.component('ordercpn', ordertemp);

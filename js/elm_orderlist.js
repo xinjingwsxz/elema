@@ -1,6 +1,5 @@
 let orderList = {
 	template: "#orderlistcpn",
-
 	data: function() {
 		return {
 			orderList: [],
@@ -8,7 +7,8 @@ let orderList = {
 			noPayList: [],
 			isOrderShow:false,
 			isOrderListShow:true,
-			orderInfo:{}
+			orderInfo:{},
+			
 		}
 	},
 	mounted() {

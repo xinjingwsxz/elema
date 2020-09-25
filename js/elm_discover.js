@@ -1,3 +1,8 @@
 let discovertemp = {
 	template: "#discovertemp",
 }
+
+
+
+
+

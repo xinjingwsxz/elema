@@ -5,10 +5,39 @@ Vue.filter('moneyFmt', function(value) {
 	}
 });
 
-//路由
-let routers = [{
+Vue.filter('timeFmt', function(value) {
+	if (parseFloat(value)) {
+		return parseFloat(value) + "分钟";
+	}
+});
+
+Vue.filter('distanceFmt', function(value) {
+	if (parseFloat(value)) {
+		return parseFloat(value).toFixed(2) + "km";
+	}
+});
+
+//路由buytmep ordertemp paytemp
+let routers = [
+	{
+			path: "/pay",
+			component: paytemp
+		},
+	{
+		path: "/order",
+		component: ordertemp
+	},
+	{
 		path: "/orderlist",
 		component: orderList
+	},
+	{
+		path: "/buy",
+		component: buytemp
+	},
+	{
+		path: "/shops",
+		component: shops
 	},
 	{
 		path: "/discover",
@@ -32,8 +61,11 @@ let elemaRouter = new VueRouter({
 });
 
 //主导航组件
-let mainNavCpn = Vue.extend({template: "#mainnavcpn"});
+let mainNavCpn = Vue.extend({
+	template: "#mainnavcpn"
+});
 let mainnav = Vue.component('mainnav', mainNavCpn);
+
 
 
 //顶部组件
@@ -61,10 +93,15 @@ let goTopTemp = Vue.extend({
 		window.addEventListener("scroll", this.getTopDistance);
 	},
 	methods: {
-		//实现回到顶部
 		getTopDistance() {
 			this.topDistance = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
+			if (this.topDistance > 66) {
+				$("#fixed").addClass("fixed-top");
+			} else {
+				$("#fixed").removeClass("fixed-top");
+			}
 		},
+		//实现回到顶部
 		goTop() {
 			let id = setInterval(function() {
 				let y = $(window).scrollTop();

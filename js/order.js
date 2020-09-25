@@ -5,7 +5,8 @@ let order = {
    data:function(){
        return{
 		   orderList:[],
-		   showList:[]
+		   showList:[],
+		   productlist:""
 	   }
    },
    methods:{

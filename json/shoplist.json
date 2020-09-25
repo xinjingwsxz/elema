@@ -1,0 +1,119 @@
+{
+	"type": 12,
+	"pageNum": 3,
+	"dataZone": {
+		"list": [{
+			"id": 101,
+			"name": "万家饺子店",
+			"img":"image/dcfl01.png",
+			"star": 5,
+			"sendstart": 15,
+			"deliveryCost": 6,
+			"sspecialty": "饺子",
+			"sendBy": "5蜂鸟配送",
+			"distance": 3.22,
+			"sendtime": 30,
+			"activitys": [{
+				"title": "新",
+				"content":"新用户首单9折"
+			},
+			{
+				"title": "特",
+				"content":"特价商品5元起"
+			}
+			]
+
+		},
+		{
+			"id": 102,
+			"name": "小锅豆腐馆(全运店)",
+			"img":"image/dcfl02.png",
+			"star": 5,
+			"sendstart": 15,
+			"deliveryCost": 6,
+			"sspecialty": "饺子",
+			"sendBy": "4蜂鸟配送",
+			"distance": 9.22,
+			"sendtime": 10,
+			"activitys": [{
+				"title": "新",
+				"content":"新用户首单9折"
+			},
+			{
+				"title": "特",
+				"content":"特价商品5元起"
+			}
+			]
+		
+		},
+		{
+			"id": 103,
+			"name": "麦当劳",
+			"img":"image/dcfl03.png",
+			"star": 5,
+			"sendstart": 15,
+			"deliveryCost": 6,
+			"sspecialty": "饺子",
+			"sendBy": "3蜂鸟配送",
+			"distance": 1.22,
+			"sendtime": 20,
+			"activitys": [{
+				"title": "新",
+				"content":"新用户首单9折"
+			},
+			{
+				"title": "特",
+				"content":"特价商品5元起"
+			},
+			{
+				"title": "老",
+				"content":"老用户积分免费"
+			}
+			]
+		
+		},
+		{
+			"id": 104,
+			"name": "米村拌饭",
+			"img":"image/dcfl04.png",
+			"star": 5,
+			"sendstart": 15,
+			"deliveryCost": 6,
+			"sspecialty": "饺子",
+			"sendBy": "2蜂鸟配送",
+			"distance": 5.22,
+			"sendtime": 20,
+			"activitys": [{
+				"title": "新",
+				"content":"新用户首单9折"
+			},
+			{
+				"title": "特",
+				"content":"特价商品5元起"
+			}
+			]
+		},
+		{
+			"id": 105,
+			"name": "神机妙算馆",
+			"img":"image/dcfl05.png",
+			"star": 5,
+			"sendstart": 4,
+			"deliveryCost": 6,
+			"sspecialty": "饺子",
+			"sendBy": "1蜂鸟配送",
+			"distance": 4.22,
+			"sendtime": 40,
+			"activitys": [{
+				"title": "新",
+				"content":"新用户首单9折"
+			},
+			{
+				"title": "特",
+				"content":"特价商品5元起"
+			}
+			]
+		
+		}]
+	}
+}

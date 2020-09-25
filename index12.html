@@ -6,10 +6,15 @@
 	<!-- 添加返回 -->
 	<!-- 支付页商品详细信息显隐 -->
 	<!-- 使用主导航路由 搭建导航框架 产生 我的 发现 和 首页 显隐 -->
+	<!-- 主页编写 -->
+	<!-- 主页主分类区 -->
+	<!-- 主页广告  -->
+	<!-- 主页跳转到商列表页 -->
+	
 
 	<head>
 		<meta charset="utf-8">
-		<title>Bootstrap 模板</title>
+		<title>饿了吗</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap.css" rel="stylesheet" />
@@ -17,6 +22,12 @@
 		<link href="css/animate.css" rel="stylesheet" />
 		<link href="css/order.css" rel="stylesheet" />
 		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/elm_mian.css" rel="stylesheet" />
+
+		<style>
+
+		</style>
+
 		<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
 		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
 		<!--[if lt IE 9]>
@@ -29,7 +40,6 @@
 			<transition enter-active-class="animated fadeIn">
 				<router-view></router-view>
 			</transition>
-
 		</div>
 
 
@@ -69,26 +79,121 @@
 		</template>
 
 		<!-- 顶部组件 -->
-		<tmeplate id="toptemp">
-			<div class="toptemp">
-				<slot name="location"></slot>
+		<template id="toptemp">
+			<div class="toptemp alert alert-primary text-center bg-primary text-white">
+				<h1>
+					<slot name="location"></slot>
+				</h1>
 				<slot name="content"></slot>
 				<div @click="back">
 					<slot name="back"></slot>
 				</div>
 			</div>
-		</tmeplate>
-
+		</template>
 		<!-- 首页 -->
 		<template id="maintemp">
-			<div>
-				<div class="main">
-					<topcpn>
-						<div slot="location">饿了吗</div>
-					</topcpn>
-				</div>
+			<div class="main">
+				<topcpn>
+					<div slot="location">
+						<i class="fa fa-location-arrow"></i>饿了吗
+					</div>
+					<div slot="content" id="fixed" class="bg-primary">
+						<div class="input-group mb-3 mt-3 col-10 offset-1">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-search"></i></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Username">
+						</div>
+					</div>
+				</topcpn>
+				<maintypecpn :maintypelist="maintypelist"></maintypecpn>
+				<mainadvertisingcpn :mainadvertising="mainadvertising"></mainadvertisingcpn>
+				<shoplistcpn :shoplist="shoplist"></shoplistcpn>
 				<mainnav></mainnav>
 				<gotopcpn></gotopcpn>
+			</div>
+		</template>
+
+		<!-- 商店页 -->
+		<template id="shopstemp">
+			<div class="shops">
+				<div>
+					<topcpn>
+						<div slot="location">
+							东软小吃一条街
+						</div>
+					</topcpn>
+					<shoplistcpn :shoplist="shoplist"></shoplistcpn>
+					<mainnav></mainnav>
+					<gotopcpn></gotopcpn>
+				</div>
+			</div>
+		</template>
+
+		<!-- 主页广告 -->
+		<template id="mainadvertisingtemp">
+			<div class="mainadvertising">
+				<div class="pt-4 pl-5 mainadvertisingbg" v-for="(adver,index) in mainadvertising" :style="adver.img">
+					<h4>{{adver.title}}</h4>
+					<h4 class="text-muted">{{adver.content}}</h4>
+					<h4 class="text-warning">{{adver.hreftext}} <i class="fa fa-arrow-right"></i> </h4>
+				</div>
+			</div>
+		</template>
+
+		<!-- 主页分类列表 -->
+		<template id="maintypetemp">
+			<div class="maintype container">
+				<ul class="row text-center list-unstyled">
+					<li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" v-for="(type,index) in maintypelist">
+						<router-link to="shops">
+							<img :src="type.img">
+							<p>{{type.name}}</p>
+						</router-link>
+					</li>
+				</ul>
+			</div>
+		</template>
+		<!-- 商店组件 -->
+		<template id="shoplisttemp">
+			<div class="container-fluid shoplisttemp list-unstyled container">
+				<div class="row">
+					<div class="recommend-line col-3 offset-1 mt-3"></div>
+					<div class="col-4 mr-0 text-center">
+						<h3>推荐商家</h3>
+					</div>
+					<div class="recommend-line col-3 ml-0 mt-3"></div>
+				</div>
+				<br>
+				<ul class="row list-unstyled text-center">
+					<li class="col-3">综合排序<i class="dropdown-toggle"></i></li>
+					<li class="col-3">距离最近</li>
+					<li class="col-3">销量最高</li>
+					<li class="col-3">筛选<span class="fa fa-filter"></span></li>
+				</ul>
+				<br>
+				<div class="row  text-muted  border border-secondary mb-3" v-for="(shop,index) in shoplist">
+					<div class="col-12 col-sm-3 text-center">
+						<img :src="shop.img">
+					</div>
+					<div class="col-8 col-sm-5">
+						<h3 class="text-dark font-weight-bold">{{shop.name}}</h3>
+						<p><i class="fa fa-star text-warning" v-for="(item,index) in shop.star"></i>{{shop.sendstart | moneyFmt}}起送|{{shop.deliveryCost | moneyFmt}}配送费</p>
+						<p>{{shop.sspecialty}}</p>
+						<p v-for="(activity,index) in shop.activitys"> <span class="alert p-0 bg-success text-white text-center">{{activity.title}}</span>{{activity.content}}</p>
+					</div>
+					<div class="col-4 col-sm-4 text-right">
+						<p>&nbsp;</p>
+						<p>
+							<span class="bg-primary text-white alert p-0">{{shop.sendBy}}</span>
+						</p>
+						<p>{{shop.distance | distanceFmt}}|{{shop.sendtime | timeFmt}}</p>
+						<p>
+							{{shop.activitys.length}}个活动
+						</p>
+					</div>
+				</div>
+				<h3 class="text-center">-----------就这么多啦-----------</h3>
 			</div>
 		</template>
 
@@ -96,12 +201,13 @@
 		<template id="discovertemp">
 			<div class="discover">
 				<topcpn>
-					<div slot="location">看看有啥好吃的</div>
+					<div slot="location">
+						看看有啥好吃的
+					</div>
 				</topcpn>
 				<mainnav></mainnav>
 				<gotopcpn></gotopcpn>
 			</div>
-
 		</template>
 
 
@@ -114,7 +220,6 @@
 				<mainnav></mainnav>
 				<gotopcpn></gotopcpn>
 			</div>
-
 		</template>
 
 
@@ -179,8 +284,6 @@
 				</div>
 			</div>
 		</template>
-
-
 
 		<!-- 订单组件 -->
 		<template id="ordertemp">
@@ -280,6 +383,8 @@
 		<script src="./js/vue.js"></script>
 		<script src="./js/vue-resources.js"></script>
 		<script src="./js/vue-router.js"></script>
+		<script src="./js/elm_shops.js"></script>
+		<script src="./js/elm_shoplist.js"></script>
 		<script src="./js/elm_discover.js"></script>
 		<script src="./js/elm_mine.js"></script>
 		<script src="./js/elm_main.js"></script>
@@ -288,8 +393,6 @@
 		<script src="./js/elm_order.js"></script>
 		<script src="./js/elm_pay.js"></script>
 		<script src="./js/index.js"></script>
-
-
 
 	</body>
 </html>
