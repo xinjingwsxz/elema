@@ -20,19 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dc822e4-cee1-4fbb-95ce-de1b14f1daf2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/indexT.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/elm_login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/elm_register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/elm_smallregister.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/json/user.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/模板.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/order.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index22.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_9_24_11_42_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_9_24_11_42__Default_Changelist_.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +85,7 @@
       <workItem from="1600908987218" duration="20000" />
       <workItem from="1600909020740" duration="633000" />
       <workItem from="1600953007314" duration="656000" />
-      <workItem from="1600994922932" duration="14927000" />
+      <workItem from="1600994922932" duration="15257000" />
     </task>
     <task id="LOCAL-00001" summary="order json ok">
       <created>1600769630801</created>
@@ -147,7 +136,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600826357574</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="login1">
+      <created>1601016198361</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601016198361</updated>
+    </task>
+    <task id="LOCAL-00009" summary="login1">
+      <created>1601016221040</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601016221040</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,16 +176,22 @@
     <MESSAGE value="orderlist js get data and show ok" />
     <MESSAGE value="orderlist js get data and show and add some files ok" />
     <MESSAGE value="main nav html and reg ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="main nav html and reg ok" />
+    <MESSAGE value="login1" />
+    <option name="LAST_COMMIT_MESSAGE" value="login1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1601016317343">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1601016317343" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1600771977968">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1440.860@0.0.1440.860" timestamp="1600771977968" />
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600826396124">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="113" y="84" key="Vcs.Push.Dialog.v2" timestamp="1601016224645">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="113" y="84" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601016224645" />
     <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600826396124" />
     <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600831596259">
       <screen x="0" y="0" width="1366" height="728" />
