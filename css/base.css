@@ -10,4 +10,5 @@ a{
 a:hover,.tborange{
 	color:rgb(255, 68, 0);
 	text-decoration: none;
+	vertical-align: middle;
 }

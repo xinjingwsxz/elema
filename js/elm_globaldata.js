@@ -13,8 +13,12 @@ let g_user = {
 
 
 //订单构造器
+orderMaxId = 0;
 function Order(){
+	this.id = 0;
 	this.shop={};
 	this.user={};
 	this.productList=[];
 }
+
+function Shop(){}

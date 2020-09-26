@@ -1,6 +1,4 @@
-let discovertemp = {
-	template: "#discovertemp",
-}
+
 
 
 
