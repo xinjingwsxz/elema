@@ -7,14 +7,22 @@ let orderList = {
 			noPayList: [],
 			isOrderShow:false,
 			isOrderListShow:true,
+			isShowProductList:[],
 			orderInfo:{},
-			
+			change:false,
+			num:0
 		}
 	},
 	mounted() {
 		this.getOrderList();
 	},
+
+
 	methods: {
+		changeShow(index){
+			this.num=this.noPayList[index].showP ++;
+			console.log(this.noPayList[index].showP);
+		},
 		reback(){//从上个页面返回事件
 			console.log("orderlist.reback");
 			this.isOrderShow=false;
@@ -42,6 +50,7 @@ let orderList = {
 						this.alreadyPayList.push(t);
 					} else if (t.stause == 2) {
 						t.amount = computeAmount(t.productlist) + t.deliveryCost;
+						t.showP=0;
 						this.noPayList.push(t);
 					}
 				}

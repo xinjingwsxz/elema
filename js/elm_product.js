@@ -14,6 +14,11 @@ let productInfotemp = Vue.extend({
 			}
 		}
 	},
+	computed:{
+		amount(){
+			
+		}
+	}
 	
 });
 let productInfocpn = Vue.component('productinfocpn', productInfotemp);

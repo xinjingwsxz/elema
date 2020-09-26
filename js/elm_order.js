@@ -8,21 +8,33 @@ let ordertemp = Vue.extend({
 	},
 	mounted(){
 		this.orderList=g_currentList;
-		console.log(g_currentList);
+	},
+	///计算总价
+	//获取设置的amount的值
+	//获取配送费
+	//计算总价
+	computed:{
+		total(){
+			var totalAmount=0;
+			for(order of this.orderList){
+				order.shop.amount=0;
+				let flag =0;
+				for(product of order.productList){
+					flag += product.count;
+					order.shop.amount += product.price * product.count;
+				}
+				if(!flag){
+					continue;
+				}
+				totalAmount += order.shop.deliveryCost + order.shop.amount;
+			}
+			return totalAmount;
+		}
+		
+		
 	},
 	methods:{
-		pay(){
-			console.log("pay");
-			// console.log(this.orderinfo);
-			// this.productlist = this.orderinfo.productlist;
-			// this.isShowOrder=false;
-			// this.isShowPay=true;
-			// this.$http.get("./json/paytype.json").then(
-			// 	function (res){
-			// 		this.payTypeList = res.body.dataZone.list;
-			// 	}
-			// ,getDataFailed);
-		},
+
 		reback(){
 			console.log("kkk");
 			this.isShowOrder=true;

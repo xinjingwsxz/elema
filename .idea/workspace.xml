@@ -16,10 +16,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="html 14" />
+    <list default="true" id="3f063259-7fc6-4837-af85-50dcb39e7142" name="Default Changelist" comment="html 15">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +88,7 @@
       <workItem from="1600908987218" duration="20000" />
       <workItem from="1600909020740" duration="633000" />
       <workItem from="1600918322836" duration="1144000" />
-      <workItem from="1601017276482" duration="264000" />
+      <workItem from="1601017276482" duration="2245000" />
     </task>
     <task id="LOCAL-00001" summary="order json ok">
       <created>1600769630801</created>
@@ -145,7 +153,35 @@
       <option name="project" value="LOCAL" />
       <updated>1601017413991</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="html 14">
+      <created>1601017755776</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601017755776</updated>
+    </task>
+    <task id="LOCAL-00011" summary="html 14">
+      <created>1601017872198</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601017872198</updated>
+    </task>
+    <task id="LOCAL-00012" summary="html 15">
+      <created>1601018252362</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601018252362</updated>
+    </task>
+    <task id="LOCAL-00013" summary="html 15">
+      <created>1601018657404</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601018657404</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +208,7 @@
     <MESSAGE value="orderlist js get data and show and add some files ok" />
     <MESSAGE value="main nav html and reg ok" />
     <MESSAGE value="route ok" />
+    <MESSAGE value="html 14" />
     <MESSAGE value="html 15" />
     <option name="LAST_COMMIT_MESSAGE" value="html 15" />
   </component>
@@ -184,15 +221,15 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1440.860@0.0.1440.860" timestamp="1600771977968" />
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1600918888822">
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2" timestamp="1601018281213">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1600918888822" />
-    <state x="513" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601017729102">
+    <state x="119" y="99" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1601018281213" />
+    <state x="513" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601018688704">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="487" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1600831596259" />
-    <state x="513" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1601017729102" />
+    <state x="513" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1601018688704" />
     <state x="-16" y="43" width="1199" height="821" key="dock-window-1" timestamp="1600778942060">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

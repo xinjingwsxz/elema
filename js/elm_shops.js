@@ -11,7 +11,6 @@ let shops = {
 	
 	methods:{
 		getShops(){
-			console.log("getShops");
 			this.$http.get("./json/" + "shoplist" + ".json").then(function(res) {
 				this.shoplist = res.body.dataZone.list;
 			}, getDataFailed);
@@ -19,25 +18,19 @@ let shops = {
 	}
 }
 
-
 let buytemp = {
 	template: "#buytemp",
 	data:function(){
 		return{
 			shop:"",
 			productList:[],
-			orderList: [],
-			alreadyPayList: [],
-			noPayList: [],
-			isOrderShow:false,
-			isOrderListShow:true,
-			orderInfo:{}
-			
+			orderLength:0
 		}
 	},
 	mounted() {
 		this.getProductList();
-		this.getShops();
+		this.getShop();
+		
 	},
 	computed:{
 		amount(){
@@ -46,7 +39,8 @@ let buytemp = {
 				this.shop.amount+= this.productList[i].count * this.productList[i].price
 			}
 			return this.shop.amount;
-		}
+		},
+
 	},
 	
 	
@@ -55,7 +49,14 @@ let buytemp = {
 	//
 	
 	methods:{
-		getShops(){
+		addOrderList(){
+			console.log("addOrderList");
+			g_orderList.push(this.makeOrder());
+			this.orderLength++;
+			console.log(g_orderList.length);
+			console.log(g_orderList);
+		},
+		getShop(){
 			this.$http.get("./json/" + "shoplist" + ".json").then(function(res) {
 				this.shop = res.body.dataZone.list[currentShop];
 				this.getProductList(this.shop.id);
@@ -71,60 +72,29 @@ let buytemp = {
 				}
 			}, getDataFailed);
 		},
-		reback(){//从上个页面返回事件
-			console.log("orderlist.reback");
-			this.isOrderShow=false;
-			this.isOrderListShow=true;
-		},
+
 		
 		
 		//点击结算到结算页面
 		//
 		goPay(){//跳转到支付页面  拿到索引 
-		
-			// //将数据传输到子组件中
-			// this.orderInfo= this.noPayList[ind];
-			// //设置数据的订单页显示和隐藏
-			// this.isOrderShow=true;
-			// this.isOrderListShow=false;
-			// console.log(this.isOrderShow);
-			this.makeOrder();
-			g_currentList.push(currentOrder);
+			g_currentList[0]=this.makeOrder();
 		},
-		
-		
 		//生成订单
 		//当商品数量大于1获取商品将商品信息加入订单列表
 		//将商店信息写入订单
 		//将收获信息写入订单
 		makeOrder(){
+			let tempOrder = new Order();
 			for(procduct of this.productList){
 				if(procduct.count>0){
-					currentOrder.productList.push(procduct);
+					tempOrder.productList.push(procduct);
 				}
-				currentOrder.shop=this.shop;
-				currentOrder.user=g_user;
+				tempOrder.shop=this.shop;
+				tempOrder.user=g_user;
 			}
-			console.log(currentOrder);
+			return tempOrder;
 		},
-		getOrderList() { //获取数据
-			console.log("getorderlist");
-			this.$http.get("./json/" + "orderlist" + ".json").then(function(res) {
-				this.orderList = res.body.dataZone.list;
-				this.alreadyPayList = [];
-				this.noPayList = [];
-				for (let t of this.orderList) {
-					if (t.stause == 1) {
-						console.log(t.productlist);
-						t.amount = computeAmount(t.productlist) + t.deliveryCost;
-						this.alreadyPayList.push(t);
-					} else if (t.stause == 2) {
-						t.amount = computeAmount(t.productlist) + t.deliveryCost;
-						this.noPayList.push(t);
-					}
-				}
-			}, getDataFailed);
-		}
 	},
 
 }
