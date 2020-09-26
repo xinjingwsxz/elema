@@ -1,44 +1,32 @@
 //货币过滤器
 Vue.filter('moneyFmt', function(value) {
-	if(!value){
-		return "￥" + parseFloat(0).toFixed(2);
-	}
 	if (parseFloat(value)) {
 		return "￥" + parseFloat(value).toFixed(2);
 	}
 });
 
-//时间过滤器
 Vue.filter('timeFmt', function(value) {
-	if(!value){
-		return parseFloat(0) + "分钟";
-	}
 	if (parseFloat(value)) {
 		return parseFloat(value) + "分钟";
 	}
 });
 
-// 距离过滤器
 Vue.filter('distanceFmt', function(value) {
-	if(!value){
-		return parseFloat(0).toFixed(2) + "km";
-	}
 	if (parseFloat(value)) {
 		return parseFloat(value).toFixed(2) + "km";
 	}
 });
 
-//路由
+//路由buytmep ordertemp paytemp
 let routers = [
 	{
 		path: "/register",
 		component: registberTemp
 	},
 	{
-	
-		path: "/pay",
-		component: paytemp
-	},
+			path: "/pay",
+			component: paytemp
+		},
 	{
 		path: "/order",
 		component: ordertemp
@@ -135,12 +123,6 @@ let goTopTemp = Vue.extend({
 let gotopcpn = Vue.component('gotopcpn', goTopTemp);
 
 
-
-//链接失败
-function getDataFailed() {
-	console.log("failed");
-	//显示失败信息
-}
 
 
 //主组件
